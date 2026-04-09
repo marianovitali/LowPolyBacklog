@@ -6,7 +6,7 @@ namespace LowPolyBacklogApi.Repositories.Interfaces
     {
 
         Task<IEnumerable<BacklogEntry>> GetAllAsync();
-        Task<BacklogEntry?> GetByIdAsync(Guid id);
+        Task<BacklogEntry?> GetByIdAsync(int id);
         Task AddAsync(BacklogEntry entry);
         Task UpdateAsync(BacklogEntry entry);
         Task DeleteAsync(BacklogEntry entry);

@@ -23,7 +23,7 @@ namespace LowPolyBacklogApi.Repositories.Implementations
                 .ToListAsync();
         }
 
-        public async Task<BacklogEntry?> GetByIdAsync(Guid id)
+        public async Task<BacklogEntry?> GetByIdAsync(int id)
         {
             var backlog = await _context.BacklogEntries
                 .Include(b => b.Game)

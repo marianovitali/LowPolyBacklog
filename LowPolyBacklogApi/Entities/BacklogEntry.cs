@@ -1,8 +1,10 @@
-﻿namespace LowPolyBacklogApi.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LowPolyBacklogApi.Entities
 {
     public class BacklogEntry
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public PlayStatus Status { get; set; } = PlayStatus.Pending;
 
@@ -12,7 +14,7 @@
 
         public string? ReviewNotes { get; set; }
 
-        public Guid GameId { get; set; }
+        public int GameId { get; set; }
 
         // JOIN
         public Game Game { get; set; } = null!;

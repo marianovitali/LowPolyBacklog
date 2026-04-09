@@ -38,7 +38,7 @@ namespace LowPolyBacklogApi.Repositories.Implementations
 
         }
 
-        public async Task<Game?> GetByIdAsync(Guid id)
+        public async Task<Game?> GetByIdAsync(int id)
         {
             var game = await _context.Games
                 .Include(g => g.Genres)
