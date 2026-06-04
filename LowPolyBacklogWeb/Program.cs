@@ -12,6 +12,7 @@ builder.Services.AddHttpClient("LowPolyBacklogApi", client =>
 });
 
 builder.Services.AddScoped<IGameApiService, GameApiService>();
+builder.Services.AddScoped<IIgdbApiService, IgdbApiService>();
 
 
 var app = builder.Build();
