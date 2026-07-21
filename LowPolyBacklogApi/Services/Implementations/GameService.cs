@@ -16,6 +16,13 @@ namespace LowPolyBacklogApi.Services.Implementations
         private readonly IMapper _mapper;
         private readonly IImageService _imageService;
 
+        private static readonly Dictionary<string, string> _genreMapper = new(StringComparer.OrdinalIgnoreCase)
+        {
+            { "Role-playing (RPG)", "RPG" },
+            { "Platform", "Platformer" },
+            { "Sport", "Sports" }
+        };
+
         public GameService(IGameRepository gameRepository, ApplicationDbContext context, IMapper mapper, IImageService imageService)
         {
             _gameRepository = gameRepository;
@@ -103,6 +110,21 @@ namespace LowPolyBacklogApi.Services.Implementations
                 localCloudinaryUrl = await _imageService.UploadImageFromUrlAsync(igdbGame.CoverImageUrl);
             }
 
+            var localGenreIds = new List<int>();
+
+            if (igdbGame.Genres != null && igdbGame.Genres.Any())
+            {
+
+                var translatedGenres = igdbGame.Genres
+                    .Select(g => _genreMapper.TryGetValue(g, out var localName) ? localName : g)
+                    .ToList();
+
+                localGenreIds = await _context.Genres
+                    .Where(g => translatedGenres.Contains(g.Name))
+                    .Select(g => g.Id)
+                    .ToListAsync();
+            }
+
             var createDto = new GameCreateDto
             {
                 Title = igdbGame.Title,
@@ -111,7 +133,9 @@ namespace LowPolyBacklogApi.Services.Implementations
                 Developer = igdbGame.Developer ?? "Unknown",
                 DiscCount = igdbGame.DiscCount,
 
-                CoverImageUrl = localCloudinaryUrl
+                CoverImageUrl = localCloudinaryUrl,
+
+                GenreIds = localGenreIds
 
             };
 

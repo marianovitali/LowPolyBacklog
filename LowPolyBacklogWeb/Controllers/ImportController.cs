@@ -29,5 +29,19 @@ namespace LowPolyBacklogWeb.Controllers
 
             return View(results);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ImportGame(IgdbSearchResultViewModel gameToImport)
+        {
+            
+            var success = await _igdbService.ImportGameAsync(gameToImport);
+
+            if (success)
+            {
+                return RedirectToAction("Index", "Library");
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

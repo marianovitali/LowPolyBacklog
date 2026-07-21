@@ -36,13 +36,17 @@ namespace LowPolyBacklogApi.Services.Implementations
             request.Headers.Add("Client-ID", _settings.ClientId);
             request.Headers.Add("Authorization", $"Bearer {token}");
 
-            string apicalypseQuery = $@"
-                search ""{query}""; 
-                fields name, summary, first_release_date, cover.image_id, genres.name, 
-                involved_companies.developer, involved_companies.company.name;
-                where platforms = (7);
-                limit 10;
-            ";
+
+            string apicalypseQuery = $"search \"{query}\"; fields name,summary,first_release_date,cover.image_id,genres.name,involved_companies.developer,involved_companies.company.name; where platforms = (7); limit 10;";
+
+
+            //string apicalypseQuery = $@"
+            //    search ""{query}""; 
+            //    fields name, summary, first_release_date, cover.image_id, genres.name, 
+            //    involved_companies.developer, involved_companies.company.name;
+            //    where platforms = (7);
+            //    limit 10;
+            //";
 
             request.Content = new StringContent(apicalypseQuery);
             return request;

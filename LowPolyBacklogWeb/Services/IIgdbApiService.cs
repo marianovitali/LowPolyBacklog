@@ -6,5 +6,7 @@ namespace LowPolyBacklogWeb.Services
     {
         Task<List<IgdbSearchResultViewModel>> SearchGamesAsync(string query);
 
+        Task<bool> ImportGameAsync(IgdbSearchResultViewModel game);
+
     }
 }

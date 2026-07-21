@@ -49,9 +49,32 @@
                 <p style="margin: 0; color: #aaa; font-size: 0.9rem;">Año: @(game.ReleaseYear > 0 ? game.ReleaseYear : "N/A")</p>
                 
                 
-                <button style="margin-top: 15px; padding: 8px 15px; background-color: #00ffcc; color: black; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">
+@*                 <button style="margin-top: 15px; padding: 8px 15px; background-color: #00ffcc; color: black; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">
                     ⬇ Importar al Catálogo
-                </button>
+                </button> *@
+
+                <form asp-action="ImportGame" method="post" style="margin-top: 15px;">
+    
+                    <input type="hidden" name="IgdbId" value="@game.IgdbId" />
+                    <input type="hidden" name="Title" value="@game.Title" />
+                    <input type="hidden" name="Synopsis" value="@game.Synopsis" />
+                    <input type="hidden" name="ReleaseYear" value="@game.ReleaseYear" />
+                    <input type="hidden" name="CoverImageUrl" value="@game.CoverImageUrl" />
+                    <input type="hidden" name="Developer" value="@game.Developer" />
+                    <input type="hidden" name="DiscCount" value="@game.DiscCount" />
+    
+                    @if (game.Genres != null)
+                    {
+                        for (int i = 0; i < game.Genres.Count; i++)
+                        {
+                            <input type="hidden" name="Genres[@i]" value="@game.Genres[i]" />
+                        }
+                    }
+
+                    <button type="submit" style="padding: 8px 15px; background-color: #00ffcc; color: black; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">
+                        ⬇ Importar al Catálogo
+                    </button>
+                </form>
             </div>
         }
 
