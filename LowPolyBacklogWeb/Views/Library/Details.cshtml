@@ -1,0 +1,92 @@
+﻿@model GameDetailsViewModel
+
+<div>
+    <a href="@Url.Action("Index", "Library")">&larr; VOLVER A MI LIBRERÍA</a>
+</div>
+
+<div class="details-container">
+    <!-- COLUMNA 1: Portada -->
+    <div class="cover-section">
+        @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
+        {
+            <img src="@Model.CoverImageUrl" alt="Portada de @Model.Title" />
+        }
+        else
+        {
+            <div class="no-cover">Sin Portada</div>
+        }
+    </div>
+
+    <!-- COLUMNA 2: Información del Juego -->
+    <div class="info-section">
+        <h1>@Model.Title</h1>
+        <ul>
+            <li><strong>AÑO DE LANZAMIENTO:</strong> @Model.ReleaseYear</li>
+            <li><strong>DESARROLLADOR:</strong> @(Model.Developer ?? "Desconocido")</li>
+            <li><strong>GÉNEROS:</strong> @string.Join(", ", Model.Genres)</li>
+            <li><strong>DISCOS:</strong> @Model.DiscCount Disco(s)</li>
+        </ul>
+
+        <div class="synopsis-box">
+            <h3>SINOPSIS</h3>
+            <p>@(Model.Synopsis ?? "No hay sinopsis disponible.")</p>
+        </div>
+    </div>
+
+    <!-- COLUMNA 3: Paneles Laterales -->
+    <div class="sidebar-section">
+
+        <!-- Panel Admin -->
+        <div class="admin-panel">
+            <h3>MODO ADMIN</h3>
+            <button>EDITAR JUEGO</button>
+            <button>ELIMINAR JUEGO</button>
+        </div>
+
+        <!-- Panel Backlog del Usuario -->
+        <div class="backlog-status-panel">
+            <h3>TU ESTADO EN BACKLOG</h3>
+
+            @if (Model.BacklogInfo != null)
+            {
+                <p><strong>ESTADO:</strong> @Model.BacklogInfo.Status</p>
+                <p><strong>PROGRESO:</strong> [Barra de progreso mockeada] 65%</p>
+                <p><strong>HORAS JUGADAS:</strong> @Model.BacklogInfo.HoursPlayed h</p>
+                <p><strong>RATING:</strong> @(Model.BacklogInfo.Rating?.ToString() ?? "Sin calificar") / 10</p>
+
+                <div class="notes-box">
+                    <strong>NOTAS:</strong>
+                    <p>@(Model.BacklogInfo.ReviewNotes ?? "Sin notas adicionales.")</p>
+                </div>
+            }
+            else
+            {
+                <p>No tenés este juego en tu backlog.</p>
+            }
+
+            <button>EDITAR MI ESTADO</button>
+        </div>
+
+        <!-- Placeholder Logo PSX -->
+        <div class="psx-logo-placeholder">
+            <img src="/images/psx-logo-mock.png" alt="PS Logo" />
+        </div>
+    </div>
+</div>
+
+<!-- SECCIÓN INFERIOR: Comentarios (Mock para UI) -->
+<div class="comments-section">
+    <h3>COMENTARIOS DEL BACKLOG</h3>
+
+    <div class="comment">
+        <strong>SolidFan_84</strong> - 15/05/2024
+        <p>Obra maestra del sigilo. La historia, los personajes y la tensión son increíbles...</p>
+        <span>RATING: 5/5</span>
+    </div>
+
+    <div class="comment">
+        <strong>PsychoMantis</strong> - 03/04/2024
+        <p>El jefe Psycho Mantis me voló la cabeza de chico. Juegazo eterno.</p>
+        <span>RATING: 4/5</span>
+    </div>
+</div>

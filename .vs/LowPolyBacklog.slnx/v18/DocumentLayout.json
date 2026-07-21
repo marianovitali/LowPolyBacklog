@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\services\\implementations\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\services\\implementations\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\library\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\library\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 334,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "RelativeToolTip": "LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAAAIwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LibraryController.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-20T23:07:17.822Z",
+              "WhenOpened": "2026-07-21T16:04:24.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Library\\Index.cshtml",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Library\\Index.cshtml",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Library\\Index.cshtml*",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Library\\Index.cshtml*",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-21T16:01:14.966Z",
               "EditorCaption": ""
             }
           ]

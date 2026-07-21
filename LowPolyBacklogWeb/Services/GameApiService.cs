@@ -1,5 +1,6 @@
 ﻿using LowPolyBacklogWeb.Models;
 using System.Text.Json;
+using System.Net.Http.Json;
 
 namespace LowPolyBacklogWeb.Services
 {
@@ -30,12 +31,25 @@ namespace LowPolyBacklogWeb.Services
                 return new PagedResponse<GameViewModel>();
             }
 
-            var jsonString = await response.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<PagedResponse<GameViewModel>>(
-                jsonString,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
+            var result = await response.Content.ReadFromJsonAsync<PagedResponse<GameViewModel>>();
+
             return result ?? new PagedResponse<GameViewModel>();
+        }
+
+        public async Task<GameDetailsViewModel?> GetGameByIdAsync(int id)
+        {
+            var client = _httpClientFactory.CreateClient("LowPolyBacklogApi");
+
+            var response = await client.GetAsync($"api/games/{id}");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return null;
+            }
+
+            var result = await response.Content.ReadFromJsonAsync<GameDetailsViewModel>();
+
+            return result;
         }
 
     }

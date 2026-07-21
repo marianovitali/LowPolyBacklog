@@ -27,5 +27,20 @@ namespace LowPolyBacklogWeb.Controllers
 
             return View(viewModel);
         }
+
+        [HttpGet("Library/Details/{id:int}")]
+        public async Task<IActionResult> Details(int id)
+        {
+
+            var gameDetails = await _gameService.GetGameByIdAsync(id);
+
+            if (gameDetails == null)
+            {
+                // Cambiar a RedirectToAction con 404 NOT FOUND PSX MEMORY CARD.
+                return NotFound();
+            }
+
+            return View(gameDetails);
+        }
     }
 }
