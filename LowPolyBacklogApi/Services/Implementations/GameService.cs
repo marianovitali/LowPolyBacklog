@@ -142,5 +142,11 @@ namespace LowPolyBacklogApi.Services.Implementations
             return await CreateGameAsync(createDto);
         }
 
+        public async Task<IEnumerable<GenreResponseDto>> GetAllGenresAsync()
+        {
+            var genres = await _gameRepository.GetAllGenresAsync();
+            return _mapper.Map<IEnumerable<GenreResponseDto>>(genres);
+        }
+
     }
 }

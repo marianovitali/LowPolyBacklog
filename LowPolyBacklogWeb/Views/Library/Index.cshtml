@@ -55,7 +55,7 @@ else
                 <p style="margin: 0; color: #aaa; font-size: 0.9rem;">Año: @game.ReleaseYear</p>
                 
                 <p style="margin: 5px 0 0 0; color: #00ffcc; font-size: 0.8rem; font-weight: bold;">
-                    @(game.Genres != null && game.Genres.Any() ? string.Join(", ", game.Genres) : "Sin género")
+                    @(game.Genres != null && game.Genres.Any() ? string.Join(", ", game.Genres.Select(g => g.Name)) : "Sin género")
                 </p>
 
                 <a asp-controller="Library" asp-action="Details" asp-route-id="@game.Id"

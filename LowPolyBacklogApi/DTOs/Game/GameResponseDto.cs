@@ -11,6 +11,9 @@ namespace LowPolyBacklogApi.DTOs.Game
         public string? Developer { get; set; }
         public string? CoverImageUrl { get; set; }
         public int DiscCount { get; set; } = 1;
-        public List<string> Genres { get; set; } = [];
+
+        public List<GenreResponseDto> Genres { get; set; } = new();
+
+        //public List<string> Genres { get; set; } = [];
     }
 }

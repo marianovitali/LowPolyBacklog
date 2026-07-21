@@ -76,5 +76,10 @@ namespace LowPolyBacklogApi.Repositories.Implementations
 
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Genre>> GetAllGenresAsync()
+        {
+            return await _context.Genres.ToListAsync();
+        }
     }
 }

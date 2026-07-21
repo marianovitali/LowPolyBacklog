@@ -23,7 +23,7 @@
         <ul>
             <li><strong>AÑO DE LANZAMIENTO:</strong> @Model.ReleaseYear</li>
             <li><strong>DESARROLLADOR:</strong> @(Model.Developer ?? "Desconocido")</li>
-            <li><strong>GÉNEROS:</strong> @string.Join(", ", Model.Genres)</li>
+            <li><strong>GÉNEROS:</strong> @string.Join(", ", Model.Genres.Select(g => g.Name))</li>
             <li><strong>DISCOS:</strong> @Model.DiscCount Disco(s)</li>
         </ul>
 

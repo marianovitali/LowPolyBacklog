@@ -11,9 +11,13 @@ namespace LowPolyBacklogApi.Mappings
         {
             #region Domain: Game
             // GET
-            CreateMap<Game, GameResponseDto>()
-                .ForMember(dto => dto.Genres,
-                            options => options.MapFrom(game => game.Genres.Select(g => g.Name).ToList()));
+
+            //CreateMap<Game, GameResponseDto>()
+            //    .ForMember(dto => dto.Genres,
+            //                options => options.MapFrom(game => game.Genres.Select(g => g.Name).ToList()));
+
+            CreateMap<Genre, GenreResponseDto>();
+            CreateMap<Game, GameResponseDto>();
 
             CreateMap<Game, GameDetailsResponseDto>()
                  .ForMember(dest => dest.BacklogInfo, opt => opt.MapFrom(src => src.BacklogEntry));

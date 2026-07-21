@@ -42,5 +42,58 @@ namespace LowPolyBacklogWeb.Controllers
 
             return View(gameDetails);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            
+            var gameDetails = await _gameService.GetGameByIdAsync(id);
+
+            if (gameDetails == null)
+            {
+                return NotFound(); 
+            }
+
+            ViewBag.AvailableGenres = await _gameService.GetAllGenresAsync();
+            var editModel = new GameUpdateViewModel
+            {
+                Id = gameDetails.Id,
+                Title = gameDetails.Title,
+                Synopsis = gameDetails.Synopsis,
+                ReleaseYear = gameDetails.ReleaseYear,
+                Developer = gameDetails.Developer,
+                CoverImageUrl = gameDetails.CoverImageUrl,
+
+            };
+
+            return View(editModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, GameUpdateViewModel model)
+        {
+            if (id != model.Id)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var isSuccess = await _gameService.UpdateGameAsync(id, model);
+
+            if (isSuccess)
+            {
+                return RedirectToAction("Details", new { id = model.Id });
+            }
+
+            ModelState.AddModelError(string.Empty, "Hubo un error al intentar actualizar el juego en la API.");
+            return View(model);
+        }
+
+
     }
 }

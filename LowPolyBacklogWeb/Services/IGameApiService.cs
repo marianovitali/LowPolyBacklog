@@ -6,5 +6,8 @@ namespace LowPolyBacklogWeb.Services
     {
         Task<PagedResponse<GameViewModel>> GetGamesAsync(GameFilterViewModel filters);
         Task<GameDetailsViewModel?> GetGameByIdAsync(int id);
+        Task<bool> UpdateGameAsync(int id, GameUpdateViewModel updatedGame);
+
+        Task<IEnumerable<GenreViewModel>> GetAllGenresAsync();
     }
 }

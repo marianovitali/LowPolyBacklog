@@ -12,5 +12,7 @@ namespace LowPolyBacklogApi.Services.Interfaces
         Task<GameResponseDto> UpdateAsync(GameUpdateDto game, int id);
         Task DeleteAsync(int id);
         Task<GameResponseDto> ImportFromIgdbAsync(IgdbSearchResultDto igdbGame);
+
+        Task<IEnumerable<GenreResponseDto>> GetAllGenresAsync();
     }
 }

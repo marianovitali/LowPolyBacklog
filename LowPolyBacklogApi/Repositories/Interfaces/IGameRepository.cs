@@ -11,6 +11,8 @@ namespace LowPolyBacklogApi.Repositories.Interfaces
         Task UpdateAsync(Game game);
         Task DeleteAsync(Game game);
 
+        Task<IEnumerable<Genre>> GetAllGenresAsync();
+
     }
 }
 
