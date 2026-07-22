@@ -39,8 +39,14 @@
         <!-- Panel Admin -->
         <div class="admin-panel">
             <h3>MODO ADMIN</h3>
-            <button>EDITAR JUEGO</button>
-            <button>ELIMINAR JUEGO</button>
+            <button onclick="location.href='@Url.Action("Edit", "Library", new { id = Model.Id })'">EDITAR JUEGO</button>
+            <form asp-action="Delete" asp-route-id="@Model.Id" method="post" style="display: inline-block; width: 100%;"
+                  onsubmit="return confirm('¿Estás seguro que querés borrar este juego? Esta acción no se puede deshacer.');">
+
+                <button type="submit" style="background-color: #d9534f; color: white; width: 100%; margin-top: 10px;">
+                    ELIMINAR JUEGO
+                </button>
+            </form>
         </div>
 
         <!-- Panel Backlog del Usuario -->

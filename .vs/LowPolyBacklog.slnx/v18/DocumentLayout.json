@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\dtos\\dashboard\\dashboardsummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\dtos\\dashboard\\dashboardsummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\entities\\backlogentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\entities\\backlogentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\library\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\library\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\services\\gameapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\services\\gameapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\services\\igameapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\services\\igameapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\services\\implementations\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\services\\implementations\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\services\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\services\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\repositories\\implementations\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\repositories\\implementations\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 334,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,80 +50,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameController.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\GameController.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Controllers\\GameController.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\GameController.cs",
-              "RelativeToolTip": "LowPolyBacklogApi\\Controllers\\GameController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DashboardSummaryDto.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\DTOs\\Dashboard\\DashboardSummaryDto.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogApi\\DTOs\\Dashboard\\DashboardSummaryDto.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\DTOs\\Dashboard\\DashboardSummaryDto.cs",
+              "RelativeToolTip": "LowPolyBacklogApi\\DTOs\\Dashboard\\DashboardSummaryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T23:31:18.566Z",
+              "WhenOpened": "2026-07-22T00:45:39.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "LowPolyBacklogApi\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Title": "BacklogEntry.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Entities\\BacklogEntry.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Entities\\BacklogEntry.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Entities\\BacklogEntry.cs",
+              "RelativeToolTip": "LowPolyBacklogApi\\Entities\\BacklogEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T23:30:56.849Z",
+              "WhenOpened": "2026-07-22T00:45:23.994Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GenresController.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\GenresController.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Controllers\\GenresController.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\GenresController.cs*",
-              "RelativeToolTip": "LowPolyBacklogApi\\Controllers\\GenresController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T23:30:52.854Z",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Library\\Details.cshtml",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Library\\Details.cshtml",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Library\\Details.cshtml",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Library\\Details.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-22T00:44:21.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "RelativeToolTip": "LowPolyBacklogApi\\Services\\Implementations\\GameService.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAAAJcAAAABAAAAAAAAAA==",
+              "Title": "LibraryController.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Controllers\\LibraryController.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAUwGwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T23:30:02.712Z",
+              "WhenOpened": "2026-07-22T00:43:31.891Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IGameService.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Services\\Interfaces\\IGameService.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Services\\Interfaces\\IGameService.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Services\\Interfaces\\IGameService.cs",
-              "RelativeToolTip": "LowPolyBacklogApi\\Services\\Interfaces\\IGameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
+              "Title": "GameApiService.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Services\\GameApiService.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Services\\GameApiService.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Services\\GameApiService.cs",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Services\\GameApiService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAUwFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T23:29:48.37Z",
+              "WhenOpened": "2026-07-22T00:42:13.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GameRepository.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Repositories\\Implementations\\GameRepository.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Repositories\\Implementations\\GameRepository.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Repositories\\Implementations\\GameRepository.cs",
-              "RelativeToolTip": "LowPolyBacklogApi\\Repositories\\Implementations\\GameRepository.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFAAAAAJAAAAAAAAAA==",
+              "Title": "IGameApiService.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Services\\IGameApiService.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Services\\IGameApiService.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Services\\IGameApiService.cs",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Services\\IGameApiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T23:29:29.623Z",
+              "WhenOpened": "2026-07-22T00:40:35.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Controllers\\GameController.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Controllers\\GameController.cs",
+              "RelativeToolTip": "LowPolyBacklogApi\\Controllers\\GameController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-22T00:40:12.545Z",
               "EditorCaption": ""
             }
           ]

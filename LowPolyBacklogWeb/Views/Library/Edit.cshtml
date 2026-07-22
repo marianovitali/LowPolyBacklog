@@ -1,0 +1,97 @@
+﻿@model GameUpdateViewModel
+
+<div>
+    <a href="@Url.Action("Details", "Library", new { id = Model.Id })">&larr; CANCELAR Y VOLVER</a>
+</div>
+
+
+<form asp-action="Edit" method="post">
+
+    
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="CoverImageUrl" />
+
+    <div class="details-container">
+
+        <!-- COLUMNA 1: Portada -->
+        <div class="cover-section">
+            @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
+            {
+                <img src="@Model.CoverImageUrl" alt="Portada de @Model.Title" />
+            }
+            else
+            {
+                <div class="no-cover">Sin Portada</div>
+            }
+        </div>
+
+        <!-- COLUMNA 2: Información del Juego (Formulario) -->
+        <div class="info-section">
+            <h1>EDITAR: @Model.Title</h1>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <ul>
+                <li>
+                    <strong>TÍTULO:</strong>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </li>
+                <li>
+                    <strong>AÑO DE LANZAMIENTO:</strong>
+                    <input asp-for="ReleaseYear" class="form-control" type="number" />
+                    <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+                </li>
+                <li>
+                    <strong>DESARROLLADOR:</strong>
+                    <input asp-for="Developer" class="form-control" />
+                    <span asp-validation-for="Developer" class="text-danger"></span>
+                </li>
+                <li>
+                    <strong>DISCOS:</strong>
+                    <input asp-for="DiscCount" class="form-control" type="number" min="1" />
+                    <span asp-validation-for="DiscCount" class="text-danger"></span>
+                </li>
+                <li>
+                    <strong>GÉNEROS:</strong>
+                    <div class="genres-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px;">
+                        @if (ViewBag.AvailableGenres != null)
+                        {
+                            foreach (var genre in (IEnumerable<GenreViewModel>)ViewBag.AvailableGenres)
+                            {
+                                bool isChecked = Model.GenreIds != null && Model.GenreIds.Contains(genre.Id);
+
+                                <label style="cursor: pointer;">
+                                    <input type="checkbox" name="GenreIds" value="@genre.Id" @(isChecked ? "checked" : "") />
+                                    @genre.Name
+                                </label>
+                            }
+                        }
+                    </div>
+                </li>
+            </ul>
+
+            <div class="synopsis-box">
+                <h3>SINOPSIS</h3>
+                <textarea asp-for="Synopsis" class="form-control" rows="5" style="width: 100%;"></textarea>
+                <span asp-validation-for="Synopsis" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- COLUMNA 3: Paneles Laterales -->
+        <div class="sidebar-section">
+
+
+            <div class="admin-panel">
+                <h3>ACCIONES</h3>
+                <button type="submit" style="background-color: #4CAF50; color: white; width: 100%; margin-bottom: 10px;">GUARDAR CAMBIOS</button>
+            </div>
+
+            <!-- Placeholder Logo PSX -->
+            <div class="psx-logo-placeholder">
+                <img src="/images/psx-logo-mock.png" alt="PS Logo" />
+            </div>
+
+        </div>
+    </div>
+</form>

@@ -9,5 +9,6 @@ namespace LowPolyBacklogWeb.Services
         Task<bool> UpdateGameAsync(int id, GameUpdateViewModel updatedGame);
 
         Task<IEnumerable<GenreViewModel>> GetAllGenresAsync();
+        Task<bool> DeleteGameAsync(int id);
     }
 }

@@ -63,7 +63,7 @@ namespace LowPolyBacklogWeb.Controllers
                 ReleaseYear = gameDetails.ReleaseYear,
                 Developer = gameDetails.Developer,
                 CoverImageUrl = gameDetails.CoverImageUrl,
-
+                GenreIds = gameDetails.Genres.Select(g => g.Id).ToList()
             };
 
             return View(editModel);
@@ -80,6 +80,7 @@ namespace LowPolyBacklogWeb.Controllers
 
             if (!ModelState.IsValid)
             {
+                ViewBag.AvailableGenres = await _gameService.GetAllGenresAsync();
                 return View(model);
             }
 
@@ -90,8 +91,24 @@ namespace LowPolyBacklogWeb.Controllers
                 return RedirectToAction("Details", new { id = model.Id });
             }
 
+            ViewBag.AvailableGenres = await _gameService.GetAllGenresAsync();
             ModelState.AddModelError(string.Empty, "Hubo un error al intentar actualizar el juego en la API.");
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var isSuccess = await _gameService.DeleteGameAsync(id);
+
+            if (isSuccess)
+            {
+                return RedirectToAction("Index");
+            }
+
+            TempData["ErrorMessage"] = "Hubo un error al intentar eliminar el juego.";
+            return RedirectToAction("Details", new { id = id });
         }
 
 

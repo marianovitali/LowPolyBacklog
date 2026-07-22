@@ -86,5 +86,20 @@ namespace LowPolyBacklogWeb.Services
             return result ?? new List<GenreViewModel>();
         }
 
+        public async Task<bool> DeleteGameAsync(int id)
+        {
+            var client = _httpClientFactory.CreateClient("LowPolyBacklogApi");
+
+            var apiKey = _configuration["ApiKey"];
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                client.DefaultRequestHeaders.Add("x-api-key", apiKey);
+            }
+
+            var response = await client.DeleteAsync($"api/games/{id}");
+
+            return response.IsSuccessStatusCode;
+        }
+
     }
 }
