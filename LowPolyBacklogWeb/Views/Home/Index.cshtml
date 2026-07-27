@@ -1,1 +1,68 @@
-﻿<h1>Próximamente: Low Poly Backlog</h1>.
+﻿@model DashboardSummaryViewModel
+@{
+    ViewData["Title"] = "LowPoly Backlog PSX Dashboard";
+}
+
+<!-- Resumen General -->
+<div class="text-center mb-5">
+    <h1 class="text-uppercase mb-4" style="font-size: 2rem;">TU BACKLOG DE PSX</h1>
+
+    <div class="d-flex justify-content-center gap-2 gap-md-4 flex-wrap" style="color: var(--ie-grey); font-size: 12px;">
+        <span>Total Horas: @Model.TotalHoursPlayed h</span>
+        <span class="d-none d-md-inline">|</span>
+        <span>Completados: @Model.CompletedGames</span>
+        <span class="d-none d-md-inline">|</span>
+        <span>Pendientes: @Model.PendingGames</span>
+    </div>
+</div>
+
+<!-- Jugando Ahora -->
+<section class="mb-5">
+    <h2 class="text-uppercase mb-4 pb-2 border-bottom d-inline-block" style="border-color: var(--neon-cyan) !important; font-size: 1.2rem;">
+        JUGANDO AHORA (@Model.CurrentlyPlaying.Count)
+    </h2>
+
+    <div class="row g-4">
+        @if (Model.CurrentlyPlaying.Any())
+        {
+            foreach (var game in Model.CurrentlyPlaying)
+            {
+                <!-- 1 columna en móvil, 2 en tablet, 3 en escritorio -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <partial name="_ActivePlayCard" model="game" />
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-muted" style="font-size: 12px;">No tenés juegos en estado "Jugando" actualmente.</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Recomendaciones del Mes -->
+<section class="mb-5">
+    <h2 class="text-uppercase mb-4 pb-2 border-bottom d-inline-block" style="border-color: var(--neon-magenta) !important; font-size: 1.2rem;">
+        RECOMENDACIONES DEL MES
+    </h2>
+
+    <div class="row g-4">
+        @if (Model.MonthlyRecommendations.Any())
+        {
+            foreach (var rec in Model.MonthlyRecommendations)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <partial name="_RecommendationCard" model="rec" />
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-muted" style="font-size: 12px;">No hay recomendaciones disponibles este mes.</p>
+            </div>
+        }
+    </div>
+</section>

@@ -1,31 +1,176 @@
-html {
-  font-size: 14px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+:root {
+    /* Paleta Retro Low Poly */
+    --bg-deep-blue: #00084d;
+    --bg-card-blue: #00134e;
+    --neon-cyan: #00e5ff;
+    --neon-magenta: #ff4fc3;
+    --neon-green: #3cff00;
+    --ie-grey: #c0c0c0;
+    --ie-dark-grey: #808080;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: 'Press Start 2P', monospace;
+    background-image: url("../images/y2k-bg.jpg"); 
+    background-color: var(--bg-deep-blue);
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* --- CONTENEDOR IE5 --- */
+.browser-window {
+    width: min(1600px, 98vw); 
+    min-height: 90vh;
+    background: var(--bg-deep-blue);
+    border: 3px solid var(--ie-grey);
+    box-shadow: 0 0 0 2px var(--ie-dark-grey), 10px 10px 0 rgba(0,0,0,0.6);
+    margin: 2rem auto;
+    overflow: hidden;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.browser-topbar {
+    background: linear-gradient(to bottom, #1b63d9, #0940a6);
+    color: white;
+    padding: 6px 12px;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.browser-menu {
+    background: #d8d8d8;
+    color: black;
+    padding: 8px 12px;
+    font-size: 10px;
+    border-bottom: 2px solid white;
+}
+
+/* --- NAVEGACIÓN --- */
+.hero-banner {
+    background: linear-gradient(90deg, var(--neon-magenta), var(--neon-cyan));
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.retro-nav {
+    margin-top: -22px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-retro {
+    font-family: 'Press Start 2P', monospace;
+    background: #d7d7d7;
+    color: black;
+    border: 2px solid white;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    padding: 12px 20px;
+    font-size: 12px;
+    text-decoration: none;
+    box-shadow: -4px -4px 0 var(--neon-cyan), 4px 4px 0 var(--neon-magenta);
+    transition: transform 0.1s ease-in-out;
+    display: inline-block;
+}
+
+    .btn-retro:hover {
+        transform: translateY(2px);
+        color: black;
+    }
+
+.btn-retro-small {
+    font-size: 9px;
+    padding: 8px 10px;
+    box-shadow: none;
+    width: 100%;
+}
+
+/* --- TARJETAS --- */
+.retro-card {
+    background: linear-gradient(90deg, #004cff, #005cff); /* Azul claro en el centro */
+    border: none;
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px -4px 0 var(--neon-cyan), 4px 4px 0 var(--neon-magenta); /* Relieve cyan y magenta */
+}
+
+.border-cyan {
+    border-color: var(--neon-cyan);
+}
+
+.border-magenta {
+    border-color: var(--neon-magenta);
+}
+
+.status-cyan {
+    color: var(--neon-cyan);
+}
+
+.status-magenta {
+    color: var(--neon-magenta);
+}
+
+/* --- STATUS BAR (ESTILO WINDOWS CLÁSICO) --- */
+.classic-status-bar {
+    background-color: var(--ie-grey); 
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid var(--ie-dark-grey);
+    border-bottom: 2px solid var(--ie-dark-grey);
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    height: 26px;
+    font-family: Tahoma, 'Segoe UI', Arial, sans-serif; 
+    font-size: 11px;
+    color: black;
+}
+
+.status-section {
+    border-top: 1px solid var(--ie-dark-grey);
+    border-left: 1px solid var(--ie-dark-grey);
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 0 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-left {
+    flex-grow: 1; 
+    margin-right: 2px;
+}
+
+.status-empty {
+    width: 25px;
+    margin-right: 2px;
+}
+
+.status-right {
+    min-width: 100px;
+    margin-right: 2px;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+    image-rendering: pixelated; 
+}
+
+/* La esquinita rayada */
+.resize-grip {
+    width: 12px;
+    height: 100%;
+    background: repeating-linear-gradient( 135deg, transparent, transparent 2px, #ffffff 2px, #ffffff 3px, var(--ie-dark-grey) 3px, var(--ie-dark-grey) 4px );
+    margin-left: 2px;
+    opacity: 0.7;
+}
+
+

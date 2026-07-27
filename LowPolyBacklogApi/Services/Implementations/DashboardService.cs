@@ -56,9 +56,20 @@ namespace LowPolyBacklogApi.Services.Implementations
 
         private async Task<List<GameResponseDto>> GetMonthlyRecommendations()
         {
-            var queryParams = new GameQueryParameters { PageNumber = 1, PageSize = 5 };
-            var (recommendedGames, _) = await _gameRepository.GetAllAsync(queryParams);
-            return _mapper.Map<List<GameResponseDto>>(recommendedGames);
+            var queryParams = new GameQueryParameters
+            {
+                PageNumber = 1,
+                PageSize = int.MaxValue 
+            };
+
+            var (games, _) = await _gameRepository.GetAllAsync(queryParams);
+
+            var randomGames = games
+                .OrderBy(_ => Guid.NewGuid())
+                .Take(5)
+                .ToList();
+
+            return _mapper.Map<List<GameResponseDto>>(randomGames);
         }
 
     }

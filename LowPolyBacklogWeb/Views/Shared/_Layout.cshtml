@@ -1,52 +1,69 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LowPoly Backlog</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - Low Poly</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/LowPolyBacklogWeb.styles.css" asp-append-version="true" />
 </head>
 <body>
+    <div class="container-fluid d-flex justify-content-center p-0">
+        <!-- Wrapper del navegador IE5 -->
+        <div class="browser-window">
+            <div class="browser-topbar">
+                <span>Low Poly - Polygon Internet Explorer Browser v5</span>
+                <span>□ ×</span>
+            </div>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav style="background-color: #1e1e1e; border-bottom: 2px solid #333; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <a asp-controller="Library" asp-action="Index" style="color: #00ffcc; font-size: 1.5rem; font-weight: bold; text-decoration: none; letter-spacing: 1px;">
-                    🎮 LowPoly Backlog
-                </a>
+            <div class="browser-menu">
+                Archivo &nbsp; Editar &nbsp; Ver &nbsp; Favoritos &nbsp; Ayuda
             </div>
-            <div style="display: flex; gap: 20px; align-items: center;">
-                
-                <a asp-controller="Library" asp-action="Index" style="color: white; text-decoration: none; font-weight: bold;">
-                    Mi Biblioteca
-                </a>
-                
-                <a asp-controller="Import" asp-action="Index" style="background-color: #0078d4; color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 4px;">
-                    ➕ Buscar Juegos
-                </a>
-                
+
+            <header class="hero-banner">
+                <img src="~/images/logo-lowpoly.png" alt="Low Poly Logo" class="img-fluid" style="max-width: 420px;" />
+            </header>
+
+            <nav class="retro-nav d-flex justify-content-center gap-3 flex-wrap mb-5">
+                <a asp-controller="Home" asp-action="Index" class="btn-retro">INICIO</a>
+                <a asp-controller="Library" asp-action="Index" class="btn-retro">CATALOGO</a>
+                <a asp-controller="Backlog" asp-action="Index" class="btn-retro">MI BACKLOG</a>
+                <a asp-controller="Profile" asp-action="Index" class="btn-retro">ACERCA DE</a>
+            </nav>
+
+            <main role="main" class="p-4 p-md-5">
+                @RenderBody()
+            </main>
+
+            @* footer *@
+@*             <footer class="text-center p-4" style="color: var(--ie-grey); font-size: 10px; background: #00042a;">
+                Low Poly © 2001 - Todo para el Backlog de PSX
+            </footer> *@
+
+            <div class="text-center pb-2" style="color: var(--neon-cyan); font-size: 11px; background: var(--bg-deep-blue);">
+                Low Poly © 2001 - Todos los derechos reservados
             </div>
-        </nav>
-    </header>
-    <div class="container" style="margin-top: 40px;">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+            <div class="classic-status-bar">
+                <div class="status-section status-left">
+                    <img src="~/images/ie-lupa-icon.png" alt="Listo" class="status-icon" />
+                    <span>Listo</span>
+                </div>
+
+                <div class="status-section status-empty"></div>
+
+                <div class="status-section status-right">
+                    <img src="~/images/ie-globe-icon.png" alt="Internet" class="status-icon" />
+                    <span>Internet</span>
+                </div>
+
+                <!-- Grip de la esquina -->
+                <div class="resize-grip"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer style="border-top: 1px solid #333; text-align: center; padding: 20px; margin-top: 50px; color: #aaa;">
-        <div class="container">
-            &copy; 2026 - LowPoly Backlog - Proyecto PSX
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
