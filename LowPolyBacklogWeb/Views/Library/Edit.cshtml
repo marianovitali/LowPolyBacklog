@@ -1,68 +1,85 @@
 ﻿@model GameUpdateViewModel
 
-<div>
-    <a href="@Url.Action("Details", "Library", new { id = Model.Id })">&larr; CANCELAR Y VOLVER</a>
+@{
+    ViewData["Title"] = "Editar " + Model.Title;
+}
+
+<!-- Botón Volver -->
+<div class="mb-4">
+    <a asp-action="Details" asp-controller="Library" asp-route-id="@Model.Id" class="text-white text-decoration-none" style="font-size: 12px; text-shadow: 1px 1px 0 #000;">
+        &larr; CANCELAR Y VOLVER
+    </a>
 </div>
 
-
 <form asp-action="Edit" method="post">
-
-    
+    <!-- Campos Ocultos -->
     <input type="hidden" asp-for="Id" />
     <input type="hidden" asp-for="CoverImageUrl" />
 
-    <div class="details-container">
-
-        <!-- COLUMNA 1: Portada -->
-        <div class="cover-section">
+    <div class="row g-4">
+        <!-- ========================================== -->
+        <!-- COLUMNA 1: Portada (Izquierda)             -->
+        <!-- ========================================== -->
+        <div class="col-12 col-md-3">
             @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
             {
-                <img src="@Model.CoverImageUrl" alt="Portada de @Model.Title" />
+                <div class="p-2 bg-dark border border-secondary" style="box-shadow: 5px 5px 0 rgba(0,0,0,0.5);">
+                    <img src="@Model.CoverImageUrl" alt="Portada de @Model.Title" class="img-fluid w-100" style="object-fit: cover;" />
+                </div>
             }
             else
             {
-                <div class="no-cover">Sin Portada</div>
+                <div class="d-flex align-items-center justify-content-center bg-secondary text-white border border-dark" style="height: 350px; box-shadow: 5px 5px 0 rgba(0,0,0,0.5);">
+                    <span>Sin Portada</span>
+                </div>
             }
         </div>
 
-        <!-- COLUMNA 2: Información del Juego (Formulario) -->
-        <div class="info-section">
-            <h1>EDITAR: @Model.Title</h1>
+        <!-- ========================================== -->
+        <!-- COLUMNA 2: Info Principal (Formulario)     -->
+        <!-- ========================================== -->
+        <div class="col-12 col-md-5">
+            <h1 class="text-uppercase mb-4" style="font-size: 1.8rem; text-shadow: 2px 2px 0 #000;">EDITAR: @Model.Title</h1>
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3" style="font-size: 10px;"></div>
 
-            <ul>
-                <li>
-                    <strong>TÍTULO:</strong>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
+            <ul class="list-unstyled mb-4" style="font-size: 12px; line-height: 2;">
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">TÍTULO:</strong>
+                    <input asp-for="Title" class="retro-input w-100" />
+                    <span asp-validation-for="Title" class="text-danger" style="font-size: 10px;"></span>
                 </li>
-                <li>
-                    <strong>AÑO DE LANZAMIENTO:</strong>
-                    <input asp-for="ReleaseYear" class="form-control" type="number" />
-                    <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">AÑO DE LANZAMIENTO:</strong>
+                    <input asp-for="ReleaseYear" class="retro-input w-100" type="number" />
+                    <span asp-validation-for="ReleaseYear" class="text-danger" style="font-size: 10px;"></span>
                 </li>
-                <li>
-                    <strong>DESARROLLADOR:</strong>
-                    <input asp-for="Developer" class="form-control" />
-                    <span asp-validation-for="Developer" class="text-danger"></span>
+
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">DESARROLLADOR:</strong>
+                    <input asp-for="Developer" class="retro-input w-100" />
+                    <span asp-validation-for="Developer" class="text-danger" style="font-size: 10px;"></span>
                 </li>
-                <li>
-                    <strong>DISCOS:</strong>
-                    <input asp-for="DiscCount" class="form-control" type="number" min="1" />
-                    <span asp-validation-for="DiscCount" class="text-danger"></span>
+
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">DISCOS:</strong>
+                    <input asp-for="DiscCount" class="retro-input w-100" type="number" min="1" />
+                    <span asp-validation-for="DiscCount" class="text-danger" style="font-size: 10px;"></span>
                 </li>
-                <li>
-                    <strong>GÉNEROS:</strong>
-                    <div class="genres-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px;">
+
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-2">GÉNEROS:</strong>
+                    <!-- Grilla para los checkboxes con un fondo oscuro sutil -->
+                    <div class="p-3 border border-secondary" style="background-color: rgba(0,0,0,0.3); display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                         @if (ViewBag.AvailableGenres != null)
                         {
                             foreach (var genre in (IEnumerable<GenreViewModel>)ViewBag.AvailableGenres)
                             {
                                 bool isChecked = Model.GenreIds != null && Model.GenreIds.Contains(genre.Id);
 
-                                <label style="cursor: pointer;">
-                                    <input type="checkbox" name="GenreIds" value="@genre.Id" @(isChecked ? "checked" : "") />
+                                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 10px; color: #ccc;">
+                                    <input type="checkbox" name="GenreIds" value="@genre.Id" @(isChecked ? "checked" : "") style="accent-color: var(--neon-cyan); width: 14px; height: 14px;" />
                                     @genre.Name
                                 </label>
                             }
@@ -71,26 +88,31 @@
                 </li>
             </ul>
 
-            <div class="synopsis-box">
-                <h3>SINOPSIS</h3>
-                <textarea asp-for="Synopsis" class="form-control" rows="5" style="width: 100%;"></textarea>
-                <span asp-validation-for="Synopsis" class="text-danger"></span>
+            <div class="retro-box border-magenta mt-4">
+                <h3 class="status-magenta mb-3" style="font-size: 14px;">SINOPSIS</h3>
+                <textarea asp-for="Synopsis" class="retro-input w-100" rows="5" style="resize: none;"></textarea>
+                <span asp-validation-for="Synopsis" class="text-danger" style="font-size: 10px;"></span>
             </div>
         </div>
 
-        <!-- COLUMNA 3: Paneles Laterales -->
-        <div class="sidebar-section">
+        <!-- ========================================== -->
+        <!-- COLUMNA 3: Paneles de Control (Derecha)    -->
+        <!-- ========================================== -->
+        <div class="col-12 col-md-4 d-flex flex-column gap-4">
 
-
-            <div class="admin-panel">
-                <h3>ACCIONES</h3>
-                <button type="submit" style="background-color: #4CAF50; color: white; width: 100%; margin-bottom: 10px;">GUARDAR CAMBIOS</button>
+            <!-- Panel Admin -->
+            <div class="retro-card border-cyan" style="height: max-content;">
+                <h3 class="text-center status-cyan mb-3" style="font-size: 14px;">ACCIONES</h3>
+                <!-- Botón de guardado usando los estilos retro con fondo verde flúor -->
+                <button type="submit" class="btn-retro w-100" style="background-color: var(--neon-green); color: black; border-color: white;">
+                    💾 GUARDAR CAMBIOS
+                </button>
             </div>
 
-            <!-- Placeholder Logo PSX -->
-            <div class="psx-logo-placeholder">
-                <img src="/images/psx-logo-mock.png" alt="PS Logo" />
-            </div>
+@*             <!-- Placeholder del Logo PSX -->
+            <div class="text-center mt-auto p-3">
+                <img src="~/images/psx-logo-mock.png" alt="PSX Logo" class="img-fluid" style="opacity: 0.5; max-width: 150px;" />
+            </div> *@
 
         </div>
     </div>

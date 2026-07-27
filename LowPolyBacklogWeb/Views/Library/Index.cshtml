@@ -1,117 +1,122 @@
 ﻿@model LowPolyBacklogWeb.Models.LibraryViewModel
 
 @{
-    ViewData["Title"] = "Mi Biblioteca";
+    ViewData["Title"] = "Biblioteca de juegos";
 }
 
-<div style="text-align: center; margin-bottom: 2rem;">
-    <h1>Mi Backlog de PSX</h1>
-    <p>La colección definitiva de 32-bits.</p>
+<!-- Cabecera -->
+<div class="text-center mb-5">
+    <h1 class="text-uppercase mb-3" style="font-size: 2rem; text-shadow: 3px 3px 0 #000;">Libreria de PSX</h1>
+    <p class="status-cyan" style="font-size: 12px; text-shadow: 1px 1px 0 #000;">La colección definitiva de 32-bits.</p>
 </div>
 
-<!-- Formulario de Filtros Local -->
-<div style="background-color: #1e1e1e; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #444;">
-    <form method="get" asp-action="Index" style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
-        
-        <input type="text" name="title" value="@Model.Filters.Title" placeholder="Buscar por título..."
-               style="padding: 8px; border-radius: 4px; border: 1px solid #555; background-color: #222; color: white;" />
-               
-        <input type="text" name="genre" value="@Model.Filters.Genre" placeholder="Género (ej: RPG)..."
-               style="padding: 8px; border-radius: 4px; border: 1px solid #555; background-color: #222; color: white;" />
-               
-        <input type="number" name="year" value="@Model.Filters.Year" placeholder="Año..."
-               style="padding: 8px; border-radius: 4px; border: 1px solid #555; background-color: #222; color: white; width: 100px;" />
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
 
-        <button type="submit" style="padding: 8px 20px; background-color: #00ffcc; color: black; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
-            Filtrar
-        </button>
-        
-        <!-- CLEAR FILTER -->
-        <a asp-action="Index" style="padding: 8px 20px; background-color: #555; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
-            Limpiar
+    <h1 class="text-uppercase m-0" style="font-size: 2rem; text-shadow: 2px 2px 0 #000; color: white;">
+        MIS JUEGOS
+    </h1>
+
+    <div class="d-flex gap-4">
+        <!-- Botón para ir a buscar a IGDB -->
+        <a asp-controller="Import" asp-action="Index" class="btn-retro text-center text-decoration-none d-flex align-items-center" style="padding: 8px 16px; font-size: 14px;">
+            ➕ IMPORTAR DESDE IGDB
         </a>
+    </div>
+
+</div>
+
+<!-- Formulario de Filtros (Estilo Panel IE) -->
+<div class="retro-panel mb-5 mx-auto" style="max-width: 900px;">
+    <form method="get" asp-action="Index" class="d-flex gap-3 justify-content-center align-items-center flex-wrap">
+
+        <input type="text" name="title" value="@Model.Filters.Title" placeholder="Buscar por título..." class="retro-input" />
+
+        <input type="text" name="genre" value="@Model.Filters.Genre" placeholder="Género (ej: RPG)" class="retro-input" />
+
+        <input type="number" name="year" value="@Model.Filters.Year" placeholder="Año" class="retro-input" style="max-width: 100px;" />
+
+        <button type="submit" class="btn-retro">FILTRAR</button>
+
+        <!-- Botón Limpiar con un tono más oscuro para diferenciarlo -->
+        <a asp-action="Index" class="btn-retro" style="background: #888; color: white;">LIMPIAR</a>
     </form>
 </div>
 
+<!-- Contenedor Principal de Juegos -->
 @if (Model.Games.Items == null || !Model.Games.Items.Any())
 {
-    <div style="text-align: center; padding: 3rem;">
-        <h3>Tu memory card está vacía... o ningún juego coincide con tu búsqueda.</h3>
+    <div class="text-center p-5 border border-secondary" style="background-color: rgba(0,0,0,0.5);">
+        <h3 class="status-magenta" style="line-height: 1.5; font-size: 14px;">
+            Tu memory card está vacía...<br />o ningún juego coincide con tu búsqueda.
+        </h3>
     </div>
 }
 else
 {
     <!-- Grilla de Juegos -->
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center mb-5">
         @foreach (var game in Model.Games.Items)
         {
-            <div style="background-color: #1e1e1e; color: white; padding: 15px; border-radius: 8px; width: 220px; text-align: center; border: 2px solid #555;">
-                
-                <img src="@game.CoverImageUrl" alt="Portada de @game.Title" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 10px;" />
-                
-                <h3 style="font-size: 1.2rem; margin: 0 0 10px 0;">@game.Title</h3>
-                <p style="margin: 0; color: #aaa; font-size: 0.9rem;">@game.Developer</p>
-                <p style="margin: 0; color: #aaa; font-size: 0.9rem;">Año: @game.ReleaseYear</p>
-                
-                <p style="margin: 5px 0 0 0; color: #00ffcc; font-size: 0.8rem; font-weight: bold;">
-                    @(game.Genres != null && game.Genres.Any() ? string.Join(", ", game.Genres.Select(g => g.Name)) : "Sin género")
-                </p>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="retro-card d-flex flex-column h-100">
+                    <img src="@game.CoverImageUrl" alt="Portada de @game.Title" class="img-fluid border border-dark mb-3" style="width: 100%; height: 220px; object-fit: cover;" />
 
-                <a asp-controller="Library" asp-action="Details" asp-route-id="@game.Id"
-                   style="display: inline-block; margin-top: 15px; padding: 8px 15px; background-color: #0078d4; color: white; text-decoration: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    Ver Detalles
-                </a>
-                
-@*                 <button style="margin-top: 15px; padding: 8px 15px; background-color: #0078d4; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                    Ver Detalles
-                </button> *@
+                    <div class="d-flex flex-column flex-grow-1 justify-content-between">
+                        <div>
+                            <h3 class="text-uppercase mb-2" style="font-size: 14px; text-shadow: 2px 2px 0 #000;">@game.Title</h3>
+                            <p style="color: var(--ie-grey); font-size: 10px; margin-bottom: 5px;">@game.Developer</p>
+                            <p style="color: var(--ie-grey); font-size: 10px; margin-bottom: 10px;">Año: @game.ReleaseYear</p>
+                            <p class="status-cyan text-uppercase" style="font-size: 10px; margin-bottom: 15px; text-shadow: 1px 1px 0 #000;">
+                                @(game.Genres != null && game.Genres.Any() ? string.Join(", ", game.Genres.Select(g => g.Name)) : "Sin género")
+                            </p>
+                        </div>
+
+                        <a asp-controller="Library" asp-action="Details" asp-route-id="@game.Id" class="btn-retro btn-retro-small text-center mt-auto">
+                            VER DETALLES
+                        </a>
+                    </div>
+                </div>
             </div>
         }
-
     </div>
 
     <!-- Controles de Paginación con Memoria de Filtros -->
-    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 30px; margin-bottom: 30px;">
-        
+    <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
+
         @if (Model.Games.HasPrevious)
         {
             <a asp-action="Index"
-                   asp-route-pageNumber="@(Model.Games.PageNumber - 1)"
-                   asp-route-title="@Model.Filters.Title"
-                   asp-route-genre="@Model.Filters.Genre"
-                   asp-route-year="@Model.Filters.Year"
-                   style="padding: 10px 20px; background-color: #333; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                ◀ Anterior
+               asp-route-pageNumber="@(Model.Games.PageNumber - 1)"
+               asp-route-title="@Model.Filters.Title"
+               asp-route-genre="@Model.Filters.Genre"
+               asp-route-year="@Model.Filters.Year"
+               class="btn-retro">
+                ◀ ANTERIOR
             </a>
         }
         else
         {
-            <span style="padding: 10px 20px; background-color: #222; color: #555; border-radius: 5px; font-weight: bold; cursor: not-allowed;">
-                ◀ Anterior
-            </span>
+            <span class="btn-retro-disabled">◀ ANTERIOR</span>
         }
 
-        <span style="padding: 10px; color: #aaa; font-weight: bold;">
+        <span class="text-uppercase px-3" style="color: var(--ie-grey); font-size: 12px;">
             Página @Model.Games.PageNumber de @Model.Games.TotalPages
         </span>
 
         @if (Model.Games.HasNext)
         {
             <a asp-action="Index"
-                   asp-route-pageNumber="@(Model.Games.PageNumber + 1)"
-                   asp-route-title="@Model.Filters.Title"
-                   asp-route-genre="@Model.Filters.Genre"
-                   asp-route-year="@Model.Filters.Year"
-                   style="padding: 10px 20px; background-color: #333; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                Siguiente ▶
+               asp-route-pageNumber="@(Model.Games.PageNumber + 1)"
+               asp-route-title="@Model.Filters.Title"
+               asp-route-genre="@Model.Filters.Genre"
+               asp-route-year="@Model.Filters.Year"
+               class="btn-retro">
+                SIGUIENTE ▶
             </a>
         }
         else
         {
-            <span style="padding: 10px 20px; background-color: #222; color: #555; border-radius: 5px; font-weight: bold; cursor: not-allowed;">
-                Siguiente ▶
-            </span>
+            <span class="btn-retro-disabled">SIGUIENTE ▶</span>
         }
     </div>
 }

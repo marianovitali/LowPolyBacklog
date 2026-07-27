@@ -4,86 +4,106 @@
     ViewData["Title"] = "Importar desde IGDB";
 }
 
-<div style="text-align: center; margin-bottom: 2rem;">
-    <h1>Base de Datos Global (IGDB)</h1>
-    <p>Buscá joyas ocultas de PSX en la red y agregalas a tu catálogo local.</p>
-</div>
+<div class="container mt-4 mb-5" style="font-family: monospace;">
 
-<!-- FORM BUSQUEDA -->
-<div style="background-color: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #444; text-align: center;">
-    <form method="get" asp-action="Index" style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
-        
-        <!-- VIEWDATA -->
-        <input type="text" name="searchQuery" value="@ViewData["CurrentSearch"]" placeholder="Ej: Crash Bandicoot, Dino Crisis..."
-               style="padding: 10px; border-radius: 4px; border: 1px solid #555; background-color: #222; color: white; width: 300px; font-size: 1rem;" required />
-               
-        <button type="submit" style="padding: 10px 25px; background-color: #0078d4; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 1rem;">
-            Buscar en IGDB
-        </button>
-        
-    </form>
-</div>
+    <!-- Título Principal -->
+    <div class="d-flex flex-column justify-content-center align-items-center mb-5">
+        <h1 class="text-uppercase m-0 pb-2 text-center" style="font-size: 2.5rem; text-shadow: 2px 2px 0 #000; border-bottom: 3px solid var(--neon-cyan); color: white;">
+            BASE DE DATOS GLOBAL (IGDB)
+        </h1>
+        <p class="mt-3 text-center" style="color: var(--ie-grey); font-size: 1.1rem;">
+            Buscá joyas ocultas de PSX en la red y agregalas a tu catálogo local.
+        </p>
+    </div>
 
-<!-- RESULTADOS -->
-@if (Model != null && Model.Any())
-{
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        
-        @foreach (var game in Model)
-        {
-            <div style="background-color: #1e1e1e; color: white; padding: 15px; border-radius: 8px; width: 220px; text-align: center; border: 2px solid #555;">
-                
-                <!-- IGDB. -->
-                @if (!string.IsNullOrEmpty(game.CoverImageUrl))
-                {
-                    <img src="@game.CoverImageUrl" alt="Portada de @game.Title" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 10px;" />
-                }
-                else
-                {
-                    <div style="width: 100%; height: 280px; background-color: #333; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: #777;">
-                        Sin Imagen
-                    </div>
-                }
-                
-                <h3 style="font-size: 1.1rem; margin: 0 0 10px 0;">@game.Title</h3>
-                <p style="margin: 0; color: #aaa; font-size: 0.9rem;">Año: @(game.ReleaseYear > 0 ? game.ReleaseYear : "N/A")</p>
-                
-                
-@*                 <button style="margin-top: 15px; padding: 8px 15px; background-color: #00ffcc; color: black; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">
-                    ⬇ Importar al Catálogo
-                </button> *@
+    <!-- FORM BÚSQUEDA -->
+    <div class="p-4 mb-5 mx-auto" style="background-color: var(--bg-card-blue); border: 2px solid var(--neon-magenta); border-radius: 8px; max-width: 650px;">
+        <form method="get" asp-action="Index" class="d-flex gap-3 justify-content-center align-items-center flex-wrap">
 
-                <form asp-action="ImportGame" method="post" style="margin-top: 15px;">
-    
-                    <input type="hidden" name="IgdbId" value="@game.IgdbId" />
-                    <input type="hidden" name="Title" value="@game.Title" />
-                    <input type="hidden" name="Synopsis" value="@game.Synopsis" />
-                    <input type="hidden" name="ReleaseYear" value="@game.ReleaseYear" />
-                    <input type="hidden" name="CoverImageUrl" value="@game.CoverImageUrl" />
-                    <input type="hidden" name="Developer" value="@game.Developer" />
-                    <input type="hidden" name="DiscCount" value="@game.DiscCount" />
-    
-                    @if (game.Genres != null)
-                    {
-                        for (int i = 0; i < game.Genres.Count; i++)
+            <input type="text" name="searchQuery" value="@ViewData["CurrentSearch"]" placeholder="Ej: Crash Bandicoot, Dino Crisis..."
+                   style="padding: 10px; border: 2px inset var(--ie-grey); background-color: #fff; color: #000; flex-grow: 1; min-width: 250px; font-family: monospace; font-size: 1rem; border-radius: 0;" required />
+
+            <button type="submit" class="btn-retro" style="padding: 10px 25px; font-size: 1rem;">
+                BUSCAR EN IGDB
+            </button>
+
+        </form>
+    </div>
+
+    <!-- RESULTADOS -->
+    @if (Model != null && Model.Any())
+    {
+        <div class="row g-4 justify-content-center">
+
+            @foreach (var game in Model)
+            {
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="h-100 d-flex flex-column p-3" style="background-color: rgba(0, 0, 0, 0.4); border: 2px solid var(--ie-grey); border-radius: 8px;">
+
+                        <!-- PORTADA IGDB -->
+                        @if (!string.IsNullOrEmpty(game.CoverImageUrl))
                         {
-                            <input type="hidden" name="Genres[@i]" value="@game.Genres[i]" />
+                            <img src="@game.CoverImageUrl" alt="Portada de @game.Title" style="width: 100%; height: 280px; object-fit: cover; border: 1px solid #000; margin-bottom: 15px;" />
                         }
-                    }
+                        else
+                        {
+                            <div style="width: 100%; height: 280px; background-color: #222; border: 1px solid #000; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: var(--ie-grey);">
+                                SIN IMAGEN
+                            </div>
+                        }
 
-                    <button type="submit" style="padding: 8px 15px; background-color: #00ffcc; color: black; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%;">
-                        ⬇ Importar al Catálogo
-                    </button>
-                </form>
-            </div>
-        }
+                        <h3 class="text-truncate text-white mb-2" title="@game.Title" style="font-size: 1.2rem; text-shadow: 1px 1px 0 #000;">
+                            @game.Title
+                        </h3>
 
-    </div>
-}
-else if (!string.IsNullOrEmpty(ViewData["CurrentSearch"]?.ToString()))
-{
-    <div style="text-align: center; padding: 3rem; color: #aaa;">
-        <h3>No encontramos resultados en IGDB para "@ViewData["CurrentSearch"]".</h3>
-        <p>Intentá buscar con otro nombre.</p>
-    </div>
-}
+                        <p style="color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: auto;">
+                            AÑO: @(game.ReleaseYear > 0 ? game.ReleaseYear : "N/A")
+                        </p>
+
+                        <!-- FORMULARIO DE IMPORTACIÓN OCULTO -->
+                        <form asp-action="ImportGame" method="post" class="mt-3 w-100">
+
+                            <input type="hidden" name="IgdbId" value="@game.IgdbId" />
+                            <input type="hidden" name="Title" value="@game.Title" />
+                            <input type="hidden" name="Synopsis" value="@game.Synopsis" />
+                            <input type="hidden" name="ReleaseYear" value="@game.ReleaseYear" />
+                            <input type="hidden" name="CoverImageUrl" value="@game.CoverImageUrl" />
+                            <input type="hidden" name="Developer" value="@game.Developer" />
+                            <input type="hidden" name="DiscCount" value="@game.DiscCount" />
+
+                            @if (game.Genres != null)
+                            {
+                                for (int i = 0; i < game.Genres.Count; i++)
+                                {
+                                    <input type="hidden" name="Genres[@i]" value="@game.Genres[i]" />
+                                }
+                            }
+
+                            <!-- BOTÓN IMPORTAR -->
+                            <button type="submit" class="btn-retro w-100 text-center mt-2" style="font-size: 0.9rem; padding: 10px;">
+                                ⬇ IMPORTAR AL CATÁLOGO
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            }
+
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(ViewData["CurrentSearch"]?.ToString()))
+    {
+        <!-- ESTADO VACÍO / ERROR 404 -->
+        <div class="text-center p-5 mx-auto" style="max-width: 600px; background-color: rgba(0,0,0,0.4); border: 2px dashed var(--neon-magenta); border-radius: 8px;">
+            <h3 style="color: var(--neon-magenta); text-shadow: 1px 1px 0 #000; margin-bottom: 1rem;">
+                ⚠️ LECTURA FALLIDA
+            </h3>
+            <p style="color: white; font-size: 1.1rem;">
+                No encontramos resultados en IGDB para "<strong>@ViewData["CurrentSearch"]</strong>".
+            </p>
+            <p style="color: var(--ie-grey); font-size: 0.9rem; margin-bottom: 0;">
+                Intentá buscar con otro nombre o verificá la ortografía.
+            </p>
+        </div>
+    }
+
+</div>

@@ -6,7 +6,7 @@
         Playing,
         Paused,
         Finished,
-        Platinumed,
+        Completed,
         Dropped
     }
 }

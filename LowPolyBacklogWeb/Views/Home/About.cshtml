@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Acerca del Proyecto";
+}
+
+<div class="container mt-4 mb-5" style="max-width: 1000px; font-family: monospace;">
+
+    <!-- Título Principal -->
+    <div class="d-flex justify-content-center align-items-center mb-5">
+        <h1 class="text-uppercase m-0 pb-2" style="font-size: 2.5rem; text-shadow: 2px 2px 0 #000; border-bottom: 3px solid var(--neon-cyan); color: white;">
+            ACERCA DEL PROYECTO
+        </h1>
+    </div>
+
+    <!-- SECCIÓN 1: El Proyecto -->
+    <div class="p-4 mb-4" style="background-color: rgba(0, 0, 0, 0.4); border: 2px solid var(--neon-cyan); border-radius: 8px;">
+        <h2 class="mb-3" style="color: var(--neon-cyan); font-size: 1.5rem;">💾 MEMORY CARD CARGADA...</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6; color: white;">
+            <strong>Low Poly Backlog</strong> nació de la necesidad de organizar el caos de juegos pendientes, combinando la pasión por el código con la nostalgia de la era de los 32 bits.
+            En lugar de crear otro CRUD genérico, decidí convertir ese problema cotidiano en un proyecto que realmente me motivara. Así nació la idea de desarrollar un gestor de backlog funcional, pero con la estética inconfundible de los menús de booteo de finales de los 90s.
+        </p>
+    </div>
+
+    <!-- SECCIÓN 2: System Information -->
+    <div class="p-4 mb-4" style="background-color: var(--bg-card-blue); border: 2px solid var(--neon-magenta); border-radius: 8px;">
+
+        <h2 class="mb-3" style="color: var(--neon-magenta); font-size: 1.5rem;">
+            ⚙️ SYSTEM INFORMATION
+        </h2>
+
+        <p style="font-size: 1.1rem; line-height:1.6; color:white;">
+            Desde el principio intenté separar claramente cada responsabilidad de la aplicación. Toda la lógica de negocio vive en una Web API independiente, mientras que el frontend fue desarrollado como una aplicación ASP.NET Core MVC que consume esa API mediante peticiones HTTP, manteniendo ambas capas completamente desacopladas.
+        </p>
+
+        <p style="font-size: 1.1rem; line-height:1.6; color:white;">
+            Durante el desarrollo fui incorporando distintas herramientas y conceptos del ecosistema .NET, como Entity Framework Core para la persistencia de datos, SQL Server, AutoMapper para el mapeo entre entidades y DTOs, integración con Cloudinary para el almacenamiento de imágenes e IGDB para obtener información de videojuegos.
+        </p>
+
+    </div>
+
+    <!-- SECCIÓN 3: Sobre mí -->
+    <div class="p-4" style="background-color: rgba(0, 0, 0, 0.4); border: 2px solid #ff99ff; border-radius: 8px;">
+
+        <h2 class="mb-3" style="color: #ff99ff; font-size: 1.5rem;">
+            👾 PLAYER PROFILE
+        </h2>
+
+        <p style="font-size: 1.1rem; line-height: 1.6; color: white;">
+            ¡Hola! Soy <strong>Mariano Vitali</strong> y desarrollé <strong>Low Poly Backlog</strong> como parte de mi camino para convertirme en desarrollador .NET.
+        </p>
+
+        <p style="font-size: 1.1rem; line-height: 1.6; color: white;">
+            Actualmente estudio la Tecnicatura Universitaria en Programación en la UTN mientras continúo profundizando en el ecosistema .NET. Disfruto especialmente diseñar APIs, construir arquitecturas limpias y transformar ideas personales en proyectos completos que me desafíen tanto técnica como creativamente.
+        </p>
+
+        <p style="font-size: 1.1rem; line-height: 1.6; color: white;">
+            Este proyecto representa justamente eso: una combinación entre mi pasión por los videojuegos retro y mi interés por desarrollar aplicaciones modernas, buscando siempre escribir código limpio, mantenible y escalable.
+        </p>
+
+        <p style="font-size: 1.1rem; line-height: 1.6; color: white;">
+            Gracias por visitar el proyecto. Si tenés alguna sugerencia, comentario o simplemente querés ponerte en contacto conmigo, podés encontrarme en los siguientes enlaces.
+        </p>
+
+        <div class="d-flex gap-3 mt-4">
+
+            <a href="https://www.linkedin.com/in/marianovitali/" target="_blank"
+               class="btn-retro text-center"
+               style="min-width:140px; padding:8px 16px; font-size:14px;">
+                LINKEDIN
+            </a>
+
+            <a href="https://github.com/marianovitali/" target="_blank"
+               class="btn-retro text-center"
+               style="min-width:140px; padding:8px 16px; font-size:14px;">
+                GITHUB
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

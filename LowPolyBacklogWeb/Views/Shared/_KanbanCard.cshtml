@@ -1,0 +1,15 @@
+﻿@model BacklogItemViewModel
+
+<!-- El ID de la tarjeta es fundamental para que JS sepa qué estamos moviendo -->
+<div class="kanban-card" id="card-@Model.Id" draggable="true" ondragstart="drag(event)">
+    <img src="@Model.CoverImageUrl" alt="Portada" class="kanban-card-img" />
+    <div class="d-flex flex-column justify-content-between w-100">
+        <div>
+            <strong class="d-block text-truncate" style="font-size: 11px; max-width: 150px; color: white;">@Model.GameTitle</strong>
+@*             <span style="font-size: 9px; color: var(--ie-grey);">@Model. | @Model.Genre</span>
+ *@        </div>
+        <a asp-controller="Library" asp-action="Details" asp-route-id="@Model.GameId" class="btn-retro btn-retro-small text-center mt-1" style="font-size: 8px; padding: 4px;">
+            VER DETALLE
+        </a>
+    </div>
+</div>

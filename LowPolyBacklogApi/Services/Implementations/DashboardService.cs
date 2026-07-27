@@ -27,7 +27,7 @@ namespace LowPolyBacklogApi.Services.Implementations
             return new DashboardSummaryDto
             {
                 TotalHoursPlayed = CalculateTotalHours(allBacklogs),
-                CompletedGames = CountByStatus(allBacklogs, PlayStatus.Platinumed),
+                CompletedGames = CountByStatus(allBacklogs, PlayStatus.Completed),
                 PendingGames = CountByStatus(allBacklogs, PlayStatus.Pending),
                 CurrentlyPlaying = GetActivePlays(allBacklogs),
                 MonthlyRecommendations = await GetMonthlyRecommendations()

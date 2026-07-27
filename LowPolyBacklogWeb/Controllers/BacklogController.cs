@@ -1,4 +1,5 @@
-﻿using LowPolyBacklogApi.Entities;
+﻿using LowPolyBacklogApi.DTOs.Backlog;
+using LowPolyBacklogApi.Entities;
 using LowPolyBacklogWeb.Models;
 using LowPolyBacklogWeb.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace LowPolyBacklogWeb.Controllers
                 Pendientes = allEntries.Where(b => b.Status == PlayStatus.Pending).ToList(),
                 Jugando = allEntries.Where(b => b.Status == PlayStatus.Playing).ToList(),
                 Pausados = allEntries.Where(b => b.Status == PlayStatus.Paused).ToList(),
-                Completados = allEntries.Where(b => b.Status == PlayStatus.Finished).ToList()
+                Completados = allEntries.Where(b => b.Status == PlayStatus.Completed).ToList()
             };
 
             return View(board);
@@ -79,5 +80,35 @@ namespace LowPolyBacklogWeb.Controllers
             ModelState.AddModelError("", "Hubo un error al actualizar el backlog.");
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateKanbanStatus([FromBody] KanbanUpdateRequest request)
+        {
+            if (request == null || request.Id <= 0)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var currentBacklog = await _backlogApiService.GetBacklogByIdAsync(request.Id);
+                if (currentBacklog == null) return NotFound();
+
+                // Convertimos el string ("Pending", "Playing", etc) al Enum real de tu API.
+                // El true al final es para ignorar mayúsculas/minúsculas y que no falle por eso.
+                currentBacklog.Status = Enum.Parse<LowPolyBacklogApi.Entities.PlayStatus>(request.Status, true);
+
+                await _backlogApiService.UpdateBacklogAsync(request.Id, currentBacklog);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error interno al actualizar el estado." });
+            }
+        }
+
+
     }
 }

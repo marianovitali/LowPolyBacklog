@@ -1,80 +1,100 @@
 ﻿@model BacklogItemViewModel
 
-<div>
-    <a href="@Url.Action("Details", "Library", new { id = Model.GameId })" style="text-decoration: none; color: #ccc;">
+@{
+    ViewData["Title"] = "Editar Progreso: " + Model.GameTitle;
+}
+
+<!-- Botón Volver -->
+<div class="mb-4">
+    <a asp-action="Details" asp-controller="Library" asp-route-id="@Model.GameId" class="text-white text-decoration-none" style="font-size: 12px; text-shadow: 1px 1px 0 #000;">
         &larr; CANCELAR Y VOLVER
     </a>
 </div>
 
 <form asp-action="Edit" method="post">
-    <!-- campos ocultos -->
+    <!-- Campos Ocultos -->
     <input type="hidden" asp-for="Id" />
     <input type="hidden" asp-for="GameId" />
     <input type="hidden" asp-for="GameTitle" />
     <input type="hidden" asp-for="CoverImageUrl" />
 
-    <div class="details-container">
-
-        <!-- COLUMNA 1: Portada -->
-        <div class="cover-section">
+    <div class="row g-4">
+        <!-- ========================================== -->
+        <!-- COLUMNA 1: Portada (Izquierda)             -->
+        <!-- ========================================== -->
+        <div class="col-12 col-md-3">
             @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
             {
-                <img src="@Model.CoverImageUrl" alt="Portada de @Model.GameTitle" style="max-width: 100%; border-radius: 5px;" />
+                <div class="p-2 bg-dark border border-secondary" style="box-shadow: 5px 5px 0 rgba(0,0,0,0.5);">
+                    <img src="@Model.CoverImageUrl" alt="Portada de @Model.GameTitle" class="img-fluid w-100" style="object-fit: cover;" />
+                </div>
             }
             else
             {
-                <div class="no-cover" style="width: 100%; height: 300px; background-color: #333; display: flex; align-items: center; justify-content: center;">
-                    Sin Portada
+                <div class="d-flex align-items-center justify-content-center bg-secondary text-white border border-dark" style="height: 350px; box-shadow: 5px 5px 0 rgba(0,0,0,0.5);">
+                    <span>Sin Portada</span>
                 </div>
             }
         </div>
 
-        <!-- COLUMNA 2: Información del Progreso (Formulario) -->
-        <div class="info-section">
-            <h1>EDITAR PROGRESO: @Model.GameTitle</h1>
+        <!-- ========================================== -->
+        <!-- COLUMNA 2: Info del Progreso (Centro)      -->
+        <!-- ========================================== -->
+        <div class="col-12 col-md-5">
+            <h1 class="text-uppercase mb-4" style="font-size: 1.8rem; text-shadow: 2px 2px 0 #000;">EDITAR PROGRESO: @Model.GameTitle</h1>
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3" style="font-size: 10px;"></div>
 
-            <ul style="list-style-type: none; padding: 0;">
-                <li style="margin-bottom: 15px;">
-                    <strong>ESTADO:</strong>
-                    <select asp-for="Status" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px; background-color: #222; color: white; border: 1px solid #555;">
+            <ul class="list-unstyled mb-4" style="font-size: 12px; line-height: 2;">
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">ESTADO:</strong>
+                    <select asp-for="Status" class="retro-input w-100">
                         <option value="Pending">Pendiente</option>
                         <option value="Playing">Jugando</option>
                         <option value="Paused">Pausado</option>
                         <option value="Completed">Completado</option>
                     </select>
+                    <span asp-validation-for="Status" class="text-danger" style="font-size: 10px;"></span>
                 </li>
-                <li style="margin-bottom: 15px;">
-                    <strong>HORAS JUGADAS:</strong>
-                    <input asp-for="HoursPlayed" class="form-control" type="number" min="0" style="width: 100%; padding: 8px; margin-top: 5px; background-color: #222; color: white; border: 1px solid #555;" />
+
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">HORAS JUGADAS:</strong>
+                    <input asp-for="HoursPlayed" class="retro-input w-100" type="number" min="0" />
+                    <span asp-validation-for="HoursPlayed" class="text-danger" style="font-size: 10px;"></span>
                 </li>
-                <li style="margin-bottom: 15px;">
-                    <strong>PUNTAJE (1-10):</strong>
-                    <input asp-for="Rating" class="form-control" type="number" min="1" max="10" style="width: 100%; padding: 8px; margin-top: 5px; background-color: #222; color: white; border: 1px solid #555;" />
+
+                <li class="mb-3">
+                    <strong class="status-cyan d-block mb-1">PUNTAJE (1-10):</strong>
+                    <input asp-for="Rating" class="retro-input w-100" type="number" min="1" max="10" />
+                    <span asp-validation-for="Rating" class="text-danger" style="font-size: 10px;"></span>
                 </li>
             </ul>
 
-            <div class="synopsis-box" style="margin-top: 20px;">
-                <h3>NOTAS / RESEÑA</h3>
-                <textarea asp-for="ReviewNotes" class="form-control" rows="5" style="width: 100%; padding: 8px; background-color: #222; color: white; border: 1px solid #555;"></textarea>
+            <div class="retro-box border-magenta mt-4">
+                <h3 class="status-magenta mb-3" style="font-size: 14px;">NOTAS / RESEÑA</h3>
+                <textarea asp-for="ReviewNotes" class="retro-input w-100" rows="5" style="resize: none;"></textarea>
+                <span asp-validation-for="ReviewNotes" class="text-danger" style="font-size: 10px;"></span>
             </div>
         </div>
 
-        <!-- COLUMNA 3: Paneles Laterales -->
-        <div class="sidebar-section">
+        <!-- ========================================== -->
+        <!-- COLUMNA 3: Paneles de Control (Derecha)    -->
+        <!-- ========================================== -->
+        <div class="col-12 col-md-4 d-flex flex-column gap-4">
 
-            <div class="admin-panel" style="background-color: #1a1a1a; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #333;">
-                <h3>ACCIONES</h3>
-                <button type="submit" style="background-color: #4CAF50; color: white; width: 100%; margin-bottom: 10px; padding: 10px; border: none; font-weight: bold; cursor: pointer; border-radius: 3px;">
-                    GUARDAR CAMBIOS
+            <!-- Panel Admin -->
+            <div class="retro-card border-cyan" style="height: max-content;">
+                <h3 class="text-center status-cyan mb-3" style="font-size: 14px;">ACCIONES</h3>
+                <!-- Botón de guardado usando los estilos retro -->
+                <button type="submit" class="btn-retro w-100" style="background-color: var(--neon-green); color: black; border-color: white;">
+                    💾 GUARDAR CAMBIOS
                 </button>
             </div>
 
-            <!-- Placeholder Logo PSX -->
-            <div class="psx-logo-placeholder">
-                <img src="/images/psx-logo-mock.png" alt="PS Logo" style="max-width: 100%;" />
-            </div>
+@*             <!-- Placeholder del Logo PSX -->
+            <div class="text-center mt-auto p-3">
+                <img src="~/images/psx-logo-mock.png" alt="PSX Logo" class="img-fluid" style="opacity: 0.5; max-width: 150px;" />
+            </div> *@
 
         </div>
     </div>

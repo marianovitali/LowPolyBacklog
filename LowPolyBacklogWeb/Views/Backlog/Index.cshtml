@@ -1,80 +1,114 @@
 ﻿@model BacklogBoardViewModel
 
-<h1>MI BACKLOG</h1>
-<p style="color: #ccc; font-size: 0.9em;">Arrastrá y soltá los juegos para actualizar tu progreso (Próximamente)</p>
+@{
+    ViewData["Title"] = "Mi Backlog";
+}
 
-<div class="kanban-board" style="display: flex; gap: 20px;">
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-uppercase m-0" style="font-size: 2rem; text-shadow: 2px 2px 0 #000;">MI BACKLOG</h1>
+    <span style="color: #aaa; font-size: 12px;">Arrastrá y soltá los juegos para actualizar tu progreso ⓘ</span>
+</div>
 
-    <!-- COLUMNA 1: PENDIENTES -->
-    <div class="column" style="flex: 1;">
-        <h3 style="color: #ff66b2; border-bottom: 1px solid #ff66b2; padding-bottom: 5px;">
-            PENDIENTES (@Model.Pendientes.Count)
-        </h3>
-
-        @foreach (var item in Model.Pendientes)
-        {
-            <div class="card" style="border: 1px solid #ff66b2; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
-                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
-                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
-                    VER DETALLE
-                </a>
-            </div>
-        }
+<div class="row g-3 align-items-start">
+    <!-- COLUMNA: PENDIENTES -->
+    <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="status-magenta mb-3" style="font-size: 14px;">🕒 PENDIENTES (@Model.Pendientes.Count)</h4>
+        <!-- ondragover y ondrop permiten que la columna entera reciba tarjetas -->
+        <div class="kanban-column column-pending" id="Pending" ondragover="allowDrop(event)" ondrop="drop(event, 'Pending')">
+            @foreach (var item in Model.Pendientes)
+            {
+                <partial name="_KanbanCard" model="item" />
+            }
+            <div class="kanban-drop-placeholder">+ Arrastrá juegos acá</div>
+        </div>
     </div>
 
-    <!-- COLUMNA 2: JUGANDO -->
-    <div class="column" style="flex: 1;">
-        <h3 style="color: #66ff66; border-bottom: 1px solid #66ff66; padding-bottom: 5px;">
-            JUGANDO (@Model.Jugando.Count)
-        </h3>
-
-        @foreach (var item in Model.Jugando)
-        {
-            <div class="card" style="border: 1px solid #66ff66; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
-                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
-                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
-                    VER DETALLE
-                </a>
-            </div>
-        }
+    <!-- COLUMNA: JUGANDO -->
+    <div class="col-12 col-md-6 col-lg-3">
+        <h4 style="color: var(--neon-green); font-size: 14px; margin-bottom: 1rem;">▶ JUGANDO (@Model.Jugando.Count)</h4>
+        <div class="kanban-column column-playing" id="Playing" ondragover="allowDrop(event)" ondrop="drop(event, 'Playing')">
+            @foreach (var item in Model.Jugando)
+            {
+                <partial name="_KanbanCard" model="item" />
+            }
+            <div class="kanban-drop-placeholder">+ Arrastrá juegos acá</div>
+        </div>
     </div>
 
-    <!-- COLUMNA 3: PAUSADOS -->
-    <div class="column" style="flex: 1;">
-        <h3 style="color: #ffff66; border-bottom: 1px solid #ffff66; padding-bottom: 5px;">
-            PAUSADOS (@Model.Pausados.Count)
-        </h3>
-
-        @foreach (var item in Model.Pausados)
-        {
-            <div class="card" style="border: 1px solid #ffff66; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
-                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
-                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
-                    VER DETALLE
-                </a>
-            </div>
-        }
+    <!-- COLUMNA: PAUSADOS -->
+    <div class="col-12 col-md-6 col-lg-3">
+        <h4 style="color: #ffd700; font-size: 14px; margin-bottom: 1rem;">⏸ PAUSADOS (@Model.Pausados.Count)</h4>
+        <div class="kanban-column column-paused" id="Paused" ondragover="allowDrop(event)" ondrop="drop(event, 'Paused')">
+            @foreach (var item in Model.Pausados)
+            {
+                <partial name="_KanbanCard" model="item" />
+            }
+            <div class="kanban-drop-placeholder">+ Arrastrá juegos acá</div>
+        </div>
     </div>
 
-    <!-- COLUMNA 4: COMPLETADOS -->
-    <div class="column" style="flex: 1;">
-        <h3 style="color: #66ccff; border-bottom: 1px solid #66ccff; padding-bottom: 5px;">
-            COMPLETADOS (@Model.Completados.Count)
-        </h3>
-
-        @foreach (var item in Model.Completados)
-        {
-            <div class="card" style="border: 1px solid #66ccff; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
-                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
-                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
-                    VER DETALLE
-                </a>
-            </div>
-        }
+    <!-- COLUMNA: COMPLETADOS -->
+    <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="status-cyan mb-3" style="font-size: 14px;">🏆 COMPLETADOS (@Model.Completados.Count)</h4>
+        <div class="kanban-column column-completed" id="Completed" ondragover="allowDrop(event)" ondrop="drop(event, 'Completed')">
+            @foreach (var item in Model.Completados)
+            {
+                <partial name="_KanbanCard" model="item" />
+            }
+            <div class="kanban-drop-placeholder">+ Arrastrá juegos acá</div>
+        </div>
     </div>
 
 </div>
+
+@Html.AntiForgeryToken()
+
+@section Scripts {
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.currentTarget.id);
+        }
+
+        function drop(ev, newStatus) {
+            ev.preventDefault();
+
+            var cardId = ev.dataTransfer.getData("text");
+            var cardElement = document.getElementById(cardId);
+
+            var targetColumn = ev.currentTarget;
+
+            var placeholder = targetColumn.querySelector('.kanban-drop-placeholder');
+            targetColumn.insertBefore(cardElement, placeholder);
+
+            var dbId = cardId.replace('card-', '');
+
+            updateBacklogStatus(dbId, newStatus);
+        }
+
+        function updateBacklogStatus(id, newStatus) {
+            var token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+            fetch('/Backlog/UpdateKanbanStatus', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token // 2. Lo mandamos en el header
+                },
+                body: JSON.stringify({
+                    id: parseInt(id),
+                    status: newStatus
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        alert('Hubo un error al guardar el estado. Por favor, recargá la página.');
+                    }
+                })
+                .catch(error => console.error('Error actualizando estado:', error));
+        }
+    </script>
+}

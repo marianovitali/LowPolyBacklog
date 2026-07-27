@@ -22,14 +22,16 @@
             </div>
 
             <header class="hero-banner">
-                <img src="~/images/logo-lowpoly.png" alt="Low Poly Logo" class="img-fluid" style="max-width: 420px;" />
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-lowpoly2.png" alt="Low Poly Logo" class="img-fluid" style="max-width: 420px;" />
+                </a>
             </header>
 
             <nav class="retro-nav d-flex justify-content-center gap-3 flex-wrap mb-5">
                 <a asp-controller="Home" asp-action="Index" class="btn-retro">INICIO</a>
                 <a asp-controller="Library" asp-action="Index" class="btn-retro">CATALOGO</a>
                 <a asp-controller="Backlog" asp-action="Index" class="btn-retro">MI BACKLOG</a>
-                <a asp-controller="Profile" asp-action="Index" class="btn-retro">ACERCA DE</a>
+                <a class="btn-retro" asp-controller="Home" asp-action="About" >SOBRE LOWPOLY</a>
             </nav>
 
             <main role="main" class="p-4 p-md-5">
@@ -42,7 +44,7 @@
             </footer> *@
 
             <div class="text-center pb-2" style="color: var(--neon-cyan); font-size: 11px; background: var(--bg-deep-blue);">
-                Low Poly © 2001 - Todos los derechos reservados
+                Low Poly © 2026 - Todos los derechos reservados
             </div>
 
             <div class="classic-status-bar">
@@ -65,5 +67,6 @@
     </div>
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

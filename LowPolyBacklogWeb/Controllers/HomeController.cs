@@ -20,5 +20,10 @@ namespace LowPolyBacklogWeb.Controllers
             return View(summary);
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
     }
 }
