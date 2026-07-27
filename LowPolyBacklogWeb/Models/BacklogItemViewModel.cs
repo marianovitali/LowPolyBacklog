@@ -10,7 +10,7 @@ namespace LowPolyBacklogWeb.Models
         public int HoursPlayed { get; set; }
         public string? ReviewNotes { get; set; }
         public int GameId { get; set; }
-        public GameViewModel Game { get; set; } // Acá anidamos los datos del juego (título, portada)
+        public string GameTitle { get; set; } = string.Empty;
+        public string? CoverImageUrl { get; set; }
     }
-}
 }

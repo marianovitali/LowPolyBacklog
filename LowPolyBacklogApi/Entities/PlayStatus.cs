@@ -4,6 +4,7 @@
     {
         Pending,
         Playing,
+        Paused,
         Finished,
         Platinumed,
         Dropped

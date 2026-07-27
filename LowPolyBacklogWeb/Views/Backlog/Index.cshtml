@@ -1,0 +1,80 @@
+﻿@model BacklogBoardViewModel
+
+<h1>MI BACKLOG</h1>
+<p style="color: #ccc; font-size: 0.9em;">Arrastrá y soltá los juegos para actualizar tu progreso (Próximamente)</p>
+
+<div class="kanban-board" style="display: flex; gap: 20px;">
+
+    <!-- COLUMNA 1: PENDIENTES -->
+    <div class="column" style="flex: 1;">
+        <h3 style="color: #ff66b2; border-bottom: 1px solid #ff66b2; padding-bottom: 5px;">
+            PENDIENTES (@Model.Pendientes.Count)
+        </h3>
+
+        @foreach (var item in Model.Pendientes)
+        {
+            <div class="card" style="border: 1px solid #ff66b2; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
+                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
+                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
+                    VER DETALLE
+                </a>
+            </div>
+        }
+    </div>
+
+    <!-- COLUMNA 2: JUGANDO -->
+    <div class="column" style="flex: 1;">
+        <h3 style="color: #66ff66; border-bottom: 1px solid #66ff66; padding-bottom: 5px;">
+            JUGANDO (@Model.Jugando.Count)
+        </h3>
+
+        @foreach (var item in Model.Jugando)
+        {
+            <div class="card" style="border: 1px solid #66ff66; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
+                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
+                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
+                    VER DETALLE
+                </a>
+            </div>
+        }
+    </div>
+
+    <!-- COLUMNA 3: PAUSADOS -->
+    <div class="column" style="flex: 1;">
+        <h3 style="color: #ffff66; border-bottom: 1px solid #ffff66; padding-bottom: 5px;">
+            PAUSADOS (@Model.Pausados.Count)
+        </h3>
+
+        @foreach (var item in Model.Pausados)
+        {
+            <div class="card" style="border: 1px solid #ffff66; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
+                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
+                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
+                    VER DETALLE
+                </a>
+            </div>
+        }
+    </div>
+
+    <!-- COLUMNA 4: COMPLETADOS -->
+    <div class="column" style="flex: 1;">
+        <h3 style="color: #66ccff; border-bottom: 1px solid #66ccff; padding-bottom: 5px;">
+            COMPLETADOS (@Model.Completados.Count)
+        </h3>
+
+        @foreach (var item in Model.Completados)
+        {
+            <div class="card" style="border: 1px solid #66ccff; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <h4 style="margin: 0 0 5px 0;">@item.GameTitle</h4>
+                <a href="@Url.Action("Details", "Library", new { id = item.GameId })"
+                   style="background-color: #eee; padding: 5px 10px; text-decoration: none; color: black; font-size: 0.8em; display: inline-block;">
+                    VER DETALLE
+                </a>
+            </div>
+        }
+    </div>
+
+</div>

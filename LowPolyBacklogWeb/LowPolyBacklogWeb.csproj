@@ -7,4 +7,8 @@
     <UserSecretsId>3c3d7a40-3807-482b-9c2f-84046278c344</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LowPolyBacklogApi\LowPolyBacklogApi.csproj" />
+  </ItemGroup>
+
 </Project>

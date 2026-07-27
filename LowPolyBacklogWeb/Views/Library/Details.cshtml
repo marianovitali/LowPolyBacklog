@@ -64,13 +64,22 @@
                     <strong>NOTAS:</strong>
                     <p>@(Model.BacklogInfo.ReviewNotes ?? "Sin notas adicionales.")</p>
                 </div>
+                <a asp-controller="Backlog" asp-action="Edit" asp-route-id="@Model.BacklogInfo.Id"
+                   style="background-color: #66ccff; color: black; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px;">
+                    EDITAR MI ESTADO
+                </a>
             }
             else
             {
                 <p>No tenés este juego en tu backlog.</p>
-            }
 
-            <button>EDITAR MI ESTADO</button>
+                <form asp-controller="Backlog" asp-action="AddToBacklog" method="post" style="margin-top: 15px;">
+                    <input type="hidden" name="gameId" value="@Model.Id" />
+                    <button type="submit" style="background-color: #ff66b2; color: white; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer;">
+                        + AGREGAR A MI BACKLOG
+                    </button>
+                </form>
+            }
         </div>
 
         <!-- Placeholder Logo PSX -->
