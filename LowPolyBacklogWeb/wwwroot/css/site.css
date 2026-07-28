@@ -29,14 +29,17 @@ body {
     width: min(1280px, 98vw);
     background-image: url("../images/pattern.png");
     background-repeat: repeat;
+    background-position: top left;
     min-height: 90vh;
-    border-radius: 2px;
-    background: var(--bg-deep-blue);
-    border: 3px solid var(--ie-grey);
+    border-radius: 3px;
+/*    background: var(--bg-deep-blue);
+*/    border: 5px solid var(--ie-grey);
     box-shadow: 0 0 0 2px var(--ie-dark-grey), 10px 10px 0 rgba(0,0,0,0.6);
     margin: 2rem auto;
     overflow: hidden;
 }
+
+
 
 .browser-topbar {
     background: linear-gradient(to bottom, #1b63d9, #0940a6);
@@ -45,6 +48,7 @@ body {
     font-size: 10px;
     display: flex;
     justify-content: space-between;
+    border-radius: 3px;
 }
 
 .browser-menu {
@@ -250,7 +254,6 @@ body {
 .retro-progress-fill {
     background-color: var(--neon-green);
     height: 100%;
-    /* Simulamos bloques separados en la barra */
     background-image: repeating-linear-gradient( to right, transparent, transparent 8px, #000 8px, #000 10px );
 }
 
