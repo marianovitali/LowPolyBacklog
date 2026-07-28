@@ -9,6 +9,10 @@
     --neon-green: #3cff00;
     --ie-grey: #c0c0c0;
     --ie-dark-grey: #808080;
+    --window-width: 1280px;
+    --border-size: 2px;
+    --shadow-size: 4px;
+    --radius: 3px;
 }
 
 body {
@@ -22,8 +26,11 @@ body {
 
 /* --- CONTENEDOR IE5 --- */
 .browser-window {
-    width: min(1280px, 98vw); 
+    width: min(1280px, 98vw);
+    background-image: url("../images/pattern.png");
+    background-repeat: repeat;
     min-height: 90vh;
+    border-radius: 2px;
     background: var(--bg-deep-blue);
     border: 3px solid var(--ie-grey);
     box-shadow: 0 0 0 2px var(--ie-dark-grey), 10px 10px 0 rgba(0,0,0,0.6);
@@ -78,6 +85,8 @@ body {
     box-shadow: -4px -4px 0 var(--neon-cyan), 4px 4px 0 var(--neon-magenta);
     transition: transform 0.1s ease-in-out;
     display: inline-block;
+    min-width: 180px;
+    text-align: center;
 }
 
     .btn-retro:hover {
@@ -96,7 +105,8 @@ body {
 .retro-card {
     background: linear-gradient(90deg, #004cff, #005cff); /* Azul claro en el centro */
     border: none;
-    padding: 15px;
+    padding: 18px;
+    gap:15px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -336,6 +346,49 @@ body {
     padding: 20px;
     font-size: 10px;
     margin-top: auto; /* Empuja el placeholder al fondo de la columna */
+}
+
+/* =========================================
+   MARQUESINA RETRO (TICKER)
+   ========================================= */
+.retro-ticker-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00084d;
+    border-top: 2px thin var(--neon-cyan);
+    border-bottom: 2px thin var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+    position: relative;
+}
+
+.retro-ticker-text {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: ticker-move 20s linear infinite; 
+}
+
+
+    .retro-ticker-text span {
+        margin-right: 60px;
+        text-shadow: 1px 1px 0 #000;
+    }
+
+@keyframes ticker-move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 

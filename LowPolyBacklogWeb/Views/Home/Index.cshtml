@@ -3,10 +3,34 @@
     ViewData["Title"] = "LowPoly Backlog PSX Dashboard";
 }
 
+<!-- Ticker / Marquesina Retro -->
+<div class="retro-ticker-container mb-4" style="margin-top: -80px;">
+    <div class="retro-ticker-text">
+        <span>> BIENVENIDO A LOW POLY BACKLOG... </span>
+        <span>> COMPROBANDO MEMORY CARD [PORT 1]... </span>
+        <span>> LECTURA DE CD-ROM EXITOSA... </span>
+        <span>> RESOLUCIÓN 320x240 ESTABLECIDA... </span>
+        <span>> SISTEMA DE 32 BITS INICIADO_ </span>
+    </div>
+</div>
 <!-- Resumen General -->
 <div class="text-center mb-5">
-    <h1 class="text-uppercase mb-4" style="font-size: 2rem;">TU BACKLOG DE PSX</h1>
 
+    <!-- Contenedor Flex para alinear la Memory Card y el Título -->
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
+
+        <!-- IMAGEN MEMORY CARD -->
+        <!-- Asegurate de cambiar el src por la ruta real donde guardaste tu PNG -->
+        <h1 class="text-uppercase m-0" style="font-size: 2rem; text-shadow: 2px 2px 0 #000; color: white;">
+            TU BACKLOG DE PSX
+        </h1>
+
+        <img src="~/images/memory-card.png" alt="Memory Card" style="height: 60px; width: auto; filter: drop-shadow(2px 2px 0 var(--neon-cyan));" />
+
+
+    </div>
+
+    <!-- Stats -->
     <div class="d-flex justify-content-center gap-2 gap-md-4 flex-wrap" style="color: var(--ie-grey); font-size: 12px;">
         <span>Total Horas: @Model.TotalHoursPlayed h</span>
         <span class="d-none d-md-inline">|</span>
