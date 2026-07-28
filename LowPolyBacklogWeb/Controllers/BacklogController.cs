@@ -1,5 +1,6 @@
 ﻿using LowPolyBacklogApi.DTOs.Backlog;
 using LowPolyBacklogApi.Entities;
+using LowPolyBacklogWeb.Filters;
 using LowPolyBacklogWeb.Models;
 using LowPolyBacklogWeb.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,7 @@ namespace LowPolyBacklogWeb.Controllers
         }
 
         [HttpPost]
+        [RequireAdmin]
         public async Task<IActionResult> AddToBacklog(int gameId)
         {
             var newEntry = new BacklogItemViewModel
@@ -64,6 +66,7 @@ namespace LowPolyBacklogWeb.Controllers
         }
 
         [HttpPost]
+        [RequireAdmin]
         public async Task<IActionResult> Edit(int id, BacklogItemViewModel model)
         {
             if (id != model.Id)
@@ -83,6 +86,7 @@ namespace LowPolyBacklogWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [RequireAdmin]
         public async Task<IActionResult> UpdateKanbanStatus([FromBody] KanbanUpdateRequest request)
         {
             if (request == null || request.Id <= 0)
@@ -95,8 +99,6 @@ namespace LowPolyBacklogWeb.Controllers
                 var currentBacklog = await _backlogApiService.GetBacklogByIdAsync(request.Id);
                 if (currentBacklog == null) return NotFound();
 
-                // Convertimos el string ("Pending", "Playing", etc) al Enum real de tu API.
-                // El true al final es para ignorar mayúsculas/minúsculas y que no falle por eso.
                 currentBacklog.Status = Enum.Parse<LowPolyBacklogApi.Entities.PlayStatus>(request.Status, true);
 
                 await _backlogApiService.UpdateBacklogAsync(request.Id, currentBacklog);

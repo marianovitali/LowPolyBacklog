@@ -35,13 +35,22 @@
             </nav>
 
             <main role="main" class="p-4 p-md-5">
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="mx-auto mb-4 p-3" style="max-width: 650px; background-color: #000; border: 2px solid var(--neon-magenta); box-shadow: 0 0 10px rgba(255, 0, 255, 0.4); border-radius: 4px;">
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="font-size: 1.2rem;">⚠️</span>
+                            <strong style="color: var(--neon-magenta); letter-spacing: 1px;">ERROR DE SISTEMA:</strong>
+                        </div>
+                        <p class="m-0 mt-2 text-white" style="font-size: 0.95rem;">
+                            @TempData["ErrorMessage"]
+                        </p>
+                    </div>
+                }
+
                 @RenderBody()
             </main>
-
-            @* footer *@
-@*             <footer class="text-center p-4" style="color: var(--ie-grey); font-size: 10px; background: #00042a;">
-                Low Poly © 2001 - Todo para el Backlog de PSX
-            </footer> *@
 
             <div class="text-center pb-2" style="color: var(--neon-cyan); font-size: 11px; background: var(--bg-deep-blue);">
                 Low Poly © 2026 - Todos los derechos reservados

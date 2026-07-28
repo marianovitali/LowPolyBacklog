@@ -1,4 +1,5 @@
-﻿using LowPolyBacklogWeb.Models;
+﻿using LowPolyBacklogWeb.Filters;
+using LowPolyBacklogWeb.Models;
 using LowPolyBacklogWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,7 @@ namespace LowPolyBacklogWeb.Controllers
         }
 
         [HttpPost]
+        [RequireAdmin]
         public async Task<IActionResult> ImportGame(IgdbSearchResultViewModel gameToImport)
         {
 

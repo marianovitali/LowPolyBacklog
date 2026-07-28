@@ -79,6 +79,7 @@
             var cardId = ev.dataTransfer.getData("text");
             var cardElement = document.getElementById(cardId);
 
+            var oldColumn = cardElement.parentElement; 
             var targetColumn = ev.currentTarget;
 
             var placeholder = targetColumn.querySelector('.kanban-drop-placeholder');
@@ -86,29 +87,75 @@
 
             var dbId = cardId.replace('card-', '');
 
-            updateBacklogStatus(dbId, newStatus);
+            updateBacklogStatus(dbId, newStatus, cardElement, oldColumn);
         }
 
-        function updateBacklogStatus(id, newStatus) {
+        async function updateBacklogStatus(id, newStatus, cardElement, oldColumn) {
             var token = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
-            fetch('/Backlog/UpdateKanbanStatus', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'RequestVerificationToken': token // 2. Lo mandamos en el header
-                },
-                body: JSON.stringify({
-                    id: parseInt(id),
-                    status: newStatus
-                })
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        alert('Hubo un error al guardar el estado. Por favor, recargá la página.');
+            try {
+                const response = await fetch('/Backlog/UpdateKanbanStatus', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': token 
+                    },
+                    body: JSON.stringify({
+                        id: parseInt(id),
+                        status: newStatus
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    
+                    mostrarErrorRetro(errorData.message);
+
+                    var oldPlaceholder = oldColumn.querySelector('.kanban-drop-placeholder');
+                    if (oldPlaceholder) {
+                        oldColumn.insertBefore(cardElement, oldPlaceholder);
+                    } else {
+                        oldColumn.appendChild(cardElement);
                     }
-                })
-                .catch(error => console.error('Error actualizando estado:', error));
+                    return; 
+                }
+
+                console.log('Estado actualizado correctamente en la API');
+
+            } catch (error) {
+                console.error('Error actualizando estado:', error);
+                mostrarErrorRetro('Error crítico de red. El sistema no pudo conectar.');
+                
+                oldColumn.appendChild(cardElement);
+            }
+        }
+
+        function mostrarErrorRetro(mensaje) {
+            const alertaHtml = `
+                <div id="alerta-kanban-js" class="mx-auto mb-4 p-3" style="max-width: 650px; background-color: #000; border: 2px solid var(--neon-magenta); box-shadow: 0 0 10px rgba(255, 0, 255, 0.4); border-radius: 4px;">
+                    <div class="d-flex align-items-center gap-2">
+                        <span style="font-size: 1.2rem;">⚠️</span>
+                        <strong style="color: var(--neon-magenta); letter-spacing: 1px;">ERROR DE SISTEMA:</strong>
+                    </div>
+                    <p class="m-0 mt-2 text-white" style="font-size: 0.95rem;">
+                        ${mensaje}
+                    </p>
+                </div>
+            `;
+
+            const mainContainer = document.querySelector('main');
+            
+            const alertaVieja = document.getElementById('alerta-kanban-js');
+            if (alertaVieja) {
+                alertaVieja.remove();
+            }
+
+            mainContainer.insertAdjacentHTML('afterbegin', alertaHtml);
+
+            setTimeout(() => {
+                const alertaParaBorrar = document.getElementById('alerta-kanban-js');
+                if (alertaParaBorrar) alertaParaBorrar.remove();
+            }, 4000);
         }
     </script>
 }

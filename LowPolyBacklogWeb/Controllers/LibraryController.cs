@@ -1,4 +1,5 @@
-﻿using LowPolyBacklogWeb.Models;
+﻿using LowPolyBacklogWeb.Filters;
+using LowPolyBacklogWeb.Models;
 using LowPolyBacklogWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
@@ -71,6 +72,7 @@ namespace LowPolyBacklogWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [RequireAdmin]
         public async Task<IActionResult> Edit(int id, GameUpdateViewModel model)
         {
             if (id != model.Id)
@@ -97,6 +99,7 @@ namespace LowPolyBacklogWeb.Controllers
         }
 
         [HttpPost]
+        [RequireAdmin]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
