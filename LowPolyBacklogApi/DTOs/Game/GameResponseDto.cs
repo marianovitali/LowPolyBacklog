@@ -5,6 +5,7 @@ namespace LowPolyBacklogApi.DTOs.Game
     public class GameResponseDto
     {
         public int Id { get; set; }
+        public int? IgdbId { get; set; }
         public required string Title { get; set; }
         public string? Synopsis { get; set; }
         public int ReleaseYear { get; set; }

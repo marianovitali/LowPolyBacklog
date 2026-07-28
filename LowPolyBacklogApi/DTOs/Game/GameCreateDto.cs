@@ -5,6 +5,8 @@ namespace LowPolyBacklogApi.DTOs.Game
 {
     public class GameCreateDto
     {
+        public int? IgdbId { get; set; }
+
         [Required(ErrorMessage = "Game title is required.")]
         [MaxLength(100)]
         public required string Title { get; set; }

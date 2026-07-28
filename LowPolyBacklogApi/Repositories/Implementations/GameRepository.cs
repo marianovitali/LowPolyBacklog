@@ -81,5 +81,10 @@ namespace LowPolyBacklogApi.Repositories.Implementations
         {
             return await _context.Genres.ToListAsync();
         }
+
+        public async Task<bool> ExistsByIgdbIdAsync(int igdbId)
+        {
+            return await _context.Games.AnyAsync(g => g.IgdbId == igdbId);
+        }
     }
 }

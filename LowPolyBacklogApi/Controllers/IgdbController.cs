@@ -45,6 +45,10 @@ namespace LowPolyBacklogApi.Controllers
                     routeValues: new { id = createdGame.Id },
                     value: createdGame);
             }
+            catch (InvalidOperationException ex)
+            {
+                return Conflict(new { message = ex.Message });
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = $"Error al importar el juego: {ex.Message}" });

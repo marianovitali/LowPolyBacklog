@@ -33,15 +33,18 @@ namespace LowPolyBacklogWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> ImportGame(IgdbSearchResultViewModel gameToImport)
         {
-            
+
             var success = await _igdbService.ImportGameAsync(gameToImport);
 
             if (success)
             {
+                TempData["SuccessMessage"] = $"¡{gameToImport.Title} guardado en el catálogo!";
                 return RedirectToAction("Index", "Library");
             }
 
-            return RedirectToAction("Index");
+            TempData["ErrorMessage"] = "El juego ya se encuentra en tu catálogo.";
+
+            return RedirectToAction("Index", new { searchQuery = gameToImport.Title });
         }
     }
 }

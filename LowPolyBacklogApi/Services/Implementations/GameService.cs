@@ -103,6 +103,12 @@ namespace LowPolyBacklogApi.Services.Implementations
 
         public async Task<GameResponseDto> ImportFromIgdbAsync(IgdbSearchResultDto igdbGame)
         {
+            var exists = await _gameRepository.ExistsByIgdbIdAsync(igdbGame.IgdbId);
+            if (exists)
+            {
+                throw new InvalidOperationException($"El juego '{igdbGame.Title}' ya se encuentra en tu catálogo.");
+            }
+
             string? localCloudinaryUrl = null;
 
             if (!string.IsNullOrEmpty(igdbGame.CoverImageUrl))
@@ -127,6 +133,7 @@ namespace LowPolyBacklogApi.Services.Implementations
 
             var createDto = new GameCreateDto
             {
+                IgdbId = igdbGame.IgdbId,
                 Title = igdbGame.Title,
                 Synopsis = igdbGame.Synopsis ?? "Synopsis Unavailable",
                 ReleaseYear = igdbGame.ReleaseYear ?? 0,
@@ -147,6 +154,8 @@ namespace LowPolyBacklogApi.Services.Implementations
             var genres = await _gameRepository.GetAllGenresAsync();
             return _mapper.Map<IEnumerable<GenreResponseDto>>(genres);
         }
+
+
 
     }
 }

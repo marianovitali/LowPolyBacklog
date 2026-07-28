@@ -6,6 +6,20 @@
 
 <div class="container mt-4 mb-5" style="font-family: monospace;">
 
+    <!-- MENSAJES DE NOTIFICACIÓN RETRO (TempData) -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="mx-auto mb-4 p-3" style="max-width: 650px; background-color: #000; border: 2px solid var(--neon-magenta); box-shadow: 0 0 10px rgba(255, 0, 255, 0.4); border-radius: 4px;">
+            <div class="d-flex align-items-center gap-2">
+                <span style="font-size: 1.2rem;">⚠️</span>
+                <strong style="color: var(--neon-magenta); letter-spacing: 1px;">ERROR DE SISTEMA:</strong>
+            </div>
+            <p class="m-0 mt-2 text-white" style="font-size: 0.95rem;">
+                @TempData["ErrorMessage"]
+            </p>
+        </div>
+    }
+
     <!-- Título Principal -->
     <div class="d-flex flex-column justify-content-center align-items-center mb-5">
         <h1 class="text-uppercase m-0 pb-2 text-center" style="font-size: 2.5rem; text-shadow: 2px 2px 0 #000; border-bottom: 3px solid var(--neon-cyan); color: white;">

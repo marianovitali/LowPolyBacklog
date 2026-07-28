@@ -10,7 +10,7 @@ namespace LowPolyBacklogApi.Repositories.Interfaces
         Task AddAsync(Game game);
         Task UpdateAsync(Game game);
         Task DeleteAsync(Game game);
-
+        Task<bool> ExistsByIgdbIdAsync(int igdbId);
         Task<IEnumerable<Genre>> GetAllGenresAsync();
 
     }
