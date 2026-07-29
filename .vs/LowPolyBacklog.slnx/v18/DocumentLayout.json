@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\backlog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\backlog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\controllers\\backlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\controllers\\backlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\shared\\_kanbancard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\shared\\_kanbancard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\import\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\import\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A6EAC44C-B9AC-9B3B-1A4E-A4EBF1E8F8FC}|LowPolyBacklogApi\\LowPolyBacklogApi.csproj|solutionrelative:lowpolybacklogapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,79 +55,104 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Backlog\\Index.cshtml",
-              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Backlog\\Index.cshtml",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Backlog\\Index.cshtml",
-              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Backlog\\Index.cshtml",
-              "ViewState": "AgIAADoAAAAAAAAAAAAUwEcAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:56:57.913Z",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\appsettings.Development.json",
+              "RelativeToolTip": "LowPolyBacklogWeb\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-29T13:42:20.861Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BacklogController.cs",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Controllers\\BacklogController.cs",
-              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Controllers\\BacklogController.cs",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Controllers\\BacklogController.cs",
-              "RelativeToolTip": "LowPolyBacklogWeb\\Controllers\\BacklogController.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-28T22:55:35.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\appsettings.json",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\appsettings.json",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\appsettings.json",
+              "RelativeToolTip": "LowPolyBacklogWeb\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:55:12.103Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-29T13:42:17.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "_KanbanCard.cshtml",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_KanbanCard.cshtml",
-              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Shared\\_KanbanCard.cshtml",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_KanbanCard.cshtml",
-              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Shared\\_KanbanCard.cshtml",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Program.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Program.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Program.cs",
+              "RelativeToolTip": "LowPolyBacklogWeb\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:55:06.344Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T13:41:38.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:48:42.242Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Program.cs",
+              "RelativeDocumentMoniker": "LowPolyBacklogApi\\Program.cs",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\Program.cs",
+              "RelativeToolTip": "LowPolyBacklogApi\\Program.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T13:40:50.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "LowPolyBacklogApi\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\appsettings.Development.json",
+              "RelativeToolTip": "LowPolyBacklogApi\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-29T13:40:23.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\appsettings.json",
+              "RelativeDocumentMoniker": "LowPolyBacklogApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogApi\\appsettings.json",
+              "RelativeToolTip": "LowPolyBacklogApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-29T13:40:19.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAUwDEAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:48:11.642Z",
+              "WhenOpened": "2026-07-29T00:25:17.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-29T00:23:10.516Z",
               "EditorCaption": ""
             }
           ]

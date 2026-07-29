@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\import\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\views\\import\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|solutionrelative:lowpolybacklogweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC94BD01-ACC6-47C0-8B79-D0E066776900}|LowPolyBacklogWeb\\LowPolyBacklogWeb.csproj|c:\\users\\maroo\\source\\repos\\lowpolybacklog\\lowpolybacklogweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 334,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Import\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:48:42.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "LowPolyBacklogWeb\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAUwDEAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-28T22:48:11.642Z",
+              "WhenOpened": "2026-07-29T00:25:17.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\maroo\\source\\repos\\LowPolyBacklog\\LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "LowPolyBacklogWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-29T00:23:10.516Z",
               "EditorCaption": ""
             }
           ]

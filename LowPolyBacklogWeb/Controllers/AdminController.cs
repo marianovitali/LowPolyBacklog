@@ -28,11 +28,11 @@ namespace LowPolyBacklogWeb.Controllers
                 Response.Cookies.Append("AdminMode", "true", options);
 
                 TempData["SuccessMessage"] = "SYSTEM OVERRIDE: Modo Administrador Activado.";
-                return RedirectToAction("Index", "Library");
+                return RedirectToAction("Index", "Home");
             }
 
             TempData["ErrorMessage"] = "ACCESS DENIED: PIN incorrecto o no autorizado.";
-            return RedirectToAction("Index", "Library");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -40,7 +40,7 @@ namespace LowPolyBacklogWeb.Controllers
         {
             Response.Cookies.Delete("AdminMode");
             TempData["SuccessMessage"] = "SYSTEM LOCKED: Modo solo lectura activado.";
-            return RedirectToAction("Index", "Library");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
