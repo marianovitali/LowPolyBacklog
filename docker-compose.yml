@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
 
   api:
@@ -9,6 +7,17 @@ services:
 
     ports:
       - "8080:8080"
+
+    environment:
+      ConnectionStrings__DefaultConnection: ${ConnectionStrings__DefaultConnection}
+      ApiKey: ${ApiKey}
+      AdminPin: ${AdminPin}
+      AutoMapper__LicenseKey: ${AutoMapper__LicenseKey}
+      CloudinarySettings__CloudName: ${CloudinarySettings__CloudName}
+      CloudinarySettings__ApiKey: ${CloudinarySettings__ApiKey}
+      CloudinarySettings__ApiSecret: ${CloudinarySettings__ApiSecret}
+      IgdbSettings__ClientId: ${IgdbSettings__ClientId}
+      IgdbSettings__ClientSecret: ${IgdbSettings__ClientSecret}
 
   web:
     build:
