@@ -1,7 +1,5 @@
-﻿using LowPolyBacklogApi.DTOs.Backlog;
-using LowPolyBacklogApi.Entities;
+﻿using LowPolyBacklogShared.DTOs.Backlog;
 using LowPolyBacklogApi.Filters;
-using LowPolyBacklogApi.Services.Implementations;
 using LowPolyBacklogApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using LowPolyBacklogApi.DTOs.Dashboard;
-using LowPolyBacklogApi.DTOs.Game;
+using LowPolyBacklogShared.DTOs.Dashboard;
+using LowPolyBacklogShared.DTOs.Game;
 using LowPolyBacklogApi.Entities;
 using LowPolyBacklogApi.Repositories.Interfaces;
 using LowPolyBacklogApi.Services.Interfaces;
+using LowPolyBacklogShared.Enums;
 
 namespace LowPolyBacklogApi.Services.Implementations
 {

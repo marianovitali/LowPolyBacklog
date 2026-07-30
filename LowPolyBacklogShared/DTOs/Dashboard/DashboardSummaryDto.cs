@@ -1,6 +1,6 @@
-﻿using LowPolyBacklogApi.DTOs.Game;
+﻿using LowPolyBacklogShared.DTOs.Game;
 
-namespace LowPolyBacklogApi.DTOs.Dashboard
+namespace LowPolyBacklogShared.DTOs.Dashboard
 {
     public class DashboardSummaryDto
     {

@@ -1,4 +1,4 @@
-﻿namespace LowPolyBacklogApi.DTOs.Dashboard
+﻿namespace LowPolyBacklogShared.DTOs.Dashboard
 {
     public class ActivePlayDto
     {

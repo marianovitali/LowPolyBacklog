@@ -1,5 +1,5 @@
-﻿using LowPolyBacklogApi.DTOs.Game;
-using LowPolyBacklogApi.DTOs.Igdb;
+﻿using LowPolyBacklogShared.DTOs.Game;
+using LowPolyBacklogShared.DTOs.Igdb;
 using LowPolyBacklogApi.Entities;
 
 namespace LowPolyBacklogApi.Services.Interfaces

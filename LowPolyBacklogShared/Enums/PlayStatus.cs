@@ -1,4 +1,4 @@
-﻿namespace LowPolyBacklogApi.Entities
+﻿namespace LowPolyBacklogShared.Enums
 {
     public enum PlayStatus
     {

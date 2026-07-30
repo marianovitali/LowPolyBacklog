@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Backlog;
+﻿using LowPolyBacklogShared.DTOs.Backlog;
 using LowPolyBacklogApi.Entities;
 
 namespace LowPolyBacklogApi.Services.Interfaces

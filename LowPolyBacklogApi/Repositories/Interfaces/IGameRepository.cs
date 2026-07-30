@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Game;
+﻿using LowPolyBacklogShared.DTOs.Game;
 using LowPolyBacklogApi.Entities;
 
 namespace LowPolyBacklogApi.Repositories.Interfaces

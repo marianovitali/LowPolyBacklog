@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Dashboard;
+﻿using LowPolyBacklogShared.DTOs.Dashboard;
 
 namespace LowPolyBacklogApi.Services.Interfaces
 {

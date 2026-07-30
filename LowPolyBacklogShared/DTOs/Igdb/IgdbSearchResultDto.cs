@@ -1,4 +1,4 @@
-﻿namespace LowPolyBacklogApi.DTOs.Igdb
+﻿namespace LowPolyBacklogShared.DTOs.Igdb
 {
     public class IgdbSearchResultDto
     {

@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.Entities;
+﻿using LowPolyBacklogShared.Enums;
 
 namespace LowPolyBacklogWeb.Models
 {

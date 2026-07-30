@@ -1,5 +1,5 @@
 ﻿using LowPolyBacklogApi.Data;
-using LowPolyBacklogApi.DTOs.Game;
+using LowPolyBacklogShared.DTOs.Game;
 using LowPolyBacklogApi.Entities;
 using LowPolyBacklogApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;

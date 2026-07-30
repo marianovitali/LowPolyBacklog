@@ -1,6 +1,6 @@
-﻿using LowPolyBacklogApi.DTOs.Backlog;
+﻿using LowPolyBacklogShared.DTOs.Backlog;
 
-namespace LowPolyBacklogApi.DTOs.Game
+namespace LowPolyBacklogShared.DTOs.Game
 {
     public class GameDetailsResponseDto : GameResponseDto
     { 

@@ -1,4 +1,4 @@
-﻿namespace LowPolyBacklogApi.DTOs.Game
+﻿namespace LowPolyBacklogShared.DTOs.Game
 {
     public class GameQueryParameters
     {

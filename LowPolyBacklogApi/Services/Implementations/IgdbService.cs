@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Igdb;
+﻿using LowPolyBacklogShared.DTOs.Igdb;
 using LowPolyBacklogApi.Services.Interfaces;
 using LowPolyBacklogApi.Settings;
 using Microsoft.Extensions.Options;

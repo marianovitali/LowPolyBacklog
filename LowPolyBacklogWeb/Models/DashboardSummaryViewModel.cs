@@ -1,5 +1,5 @@
-﻿using LowPolyBacklogApi.DTOs.Dashboard;
-using LowPolyBacklogApi.DTOs.Game;
+﻿using LowPolyBacklogShared.DTOs.Dashboard;
+using LowPolyBacklogShared.DTOs.Game;
 
 namespace LowPolyBacklogWeb.Models
 {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using LowPolyBacklogApi.Data;
-using LowPolyBacklogApi.DTOs.Game;
-using LowPolyBacklogApi.DTOs.Igdb;
+using LowPolyBacklogShared.DTOs.Game;
+using LowPolyBacklogShared.DTOs.Igdb;
 using LowPolyBacklogApi.Entities;
 using LowPolyBacklogApi.Repositories.Interfaces;
 using LowPolyBacklogApi.Services.Interfaces;

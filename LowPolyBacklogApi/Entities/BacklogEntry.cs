@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LowPolyBacklogShared.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace LowPolyBacklogApi.Entities
 {

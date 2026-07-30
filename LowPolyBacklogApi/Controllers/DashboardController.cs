@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Dashboard;
+﻿using LowPolyBacklogShared.DTOs.Dashboard;
 using LowPolyBacklogApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

@@ -5,6 +5,6 @@
         public int Id { get; set; }
         //public LowPolyBacklogApi.Entities.PlayStatus Status { get; set; }
 
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }

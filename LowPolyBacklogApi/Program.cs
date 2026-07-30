@@ -65,7 +65,12 @@ builder.Services.Configure<IgdbSettings>(builder.Configuration.GetSection("IgdbS
 
 var allowedOrigins = builder.Configuration
     .GetSection("AllowedOrigins")
-    .Get<string[]>()!;
+    .Get<string[]>();
+
+if (allowedOrigins is null || allowedOrigins.Length == 0)
+{
+    throw new InvalidOperationException("No AllowedOrigins are configured.");
+}
 
 builder.Services.AddCors(options =>
 {

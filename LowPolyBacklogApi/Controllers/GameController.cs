@@ -1,7 +1,8 @@
-﻿using LowPolyBacklogApi.DTOs.Game;
+﻿using LowPolyBacklogShared.DTOs.Game;
 using LowPolyBacklogApi.Filters;
 using LowPolyBacklogApi.Helpers;
 using LowPolyBacklogApi.Services.Interfaces;
+using LowPolyBacklogShared.DTOs.Game;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LowPolyBacklogApi.Controllers

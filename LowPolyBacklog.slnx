@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="LowPolyBacklogApi/LowPolyBacklogApi.csproj" />
+  <Project Path="LowPolyBacklogShared/LowPolyBacklogShared.csproj" Id="d3afa120-2995-4562-9ef4-b258fbbb33e9" />
   <Project Path="LowPolyBacklogWeb/LowPolyBacklogWeb.csproj" Id="dc94bd01-acc6-47c0-8b79-d0e066776900" />
 </Solution>

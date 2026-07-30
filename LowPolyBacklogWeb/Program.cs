@@ -8,7 +8,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient("LowPolyBacklogApi", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7045/");
+    var apiBaseUrl = builder.Configuration["ApiSettings:BaseUrl"]
+                     ?? throw new InvalidOperationException("The API base URL is not configured.");
+
+    client.BaseAddress = new Uri(apiBaseUrl);
 });
 
 builder.Services.AddScoped<IGameApiService, GameApiService>();

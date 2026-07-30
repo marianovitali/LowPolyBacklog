@@ -1,7 +1,7 @@
-﻿using LowPolyBacklogApi.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
-namespace LowPolyBacklogApi.DTOs.Game
+namespace LowPolyBacklogShared.DTOs.Game
 {
     public class GameCreateDto
     {

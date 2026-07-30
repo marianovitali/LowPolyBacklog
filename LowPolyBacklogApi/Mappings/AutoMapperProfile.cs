@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using LowPolyBacklogApi.DTOs.Backlog;
-using LowPolyBacklogApi.DTOs.Game;
+using LowPolyBacklogShared.DTOs.Backlog;
+using LowPolyBacklogShared.DTOs.Game;
 using LowPolyBacklogApi.Entities;
 
 namespace LowPolyBacklogApi.Mappings

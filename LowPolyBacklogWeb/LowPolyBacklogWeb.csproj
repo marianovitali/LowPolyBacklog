@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LowPolyBacklogApi\LowPolyBacklogApi.csproj" />
+    <ProjectReference Include="..\LowPolyBacklogShared\LowPolyBacklogShared.csproj" />
   </ItemGroup>
 
 </Project>

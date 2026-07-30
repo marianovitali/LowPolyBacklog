@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Igdb;
+﻿using LowPolyBacklogShared.DTOs.Igdb;
 
 namespace LowPolyBacklogApi.Services.Interfaces
 {

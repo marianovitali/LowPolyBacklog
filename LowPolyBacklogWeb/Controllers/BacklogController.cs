@@ -1,5 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Backlog;
-using LowPolyBacklogApi.Entities;
+﻿using LowPolyBacklogShared.Enums;
 using LowPolyBacklogWeb.Filters;
 using LowPolyBacklogWeb.Models;
 using LowPolyBacklogWeb.Services;
@@ -99,7 +98,7 @@ namespace LowPolyBacklogWeb.Controllers
                 var currentBacklog = await _backlogApiService.GetBacklogByIdAsync(request.Id);
                 if (currentBacklog == null) return NotFound();
 
-                currentBacklog.Status = Enum.Parse<LowPolyBacklogApi.Entities.PlayStatus>(request.Status, true);
+                currentBacklog.Status = Enum.Parse<PlayStatus>(request.Status, true);
 
                 await _backlogApiService.UpdateBacklogAsync(request.Id, currentBacklog);
 

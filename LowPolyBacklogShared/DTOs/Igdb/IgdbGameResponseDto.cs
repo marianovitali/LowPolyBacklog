@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using static LowPolyBacklogApi.DTOs.Igdb.IgdbComponentsDto;
 
-namespace LowPolyBacklogApi.DTOs.Igdb
+
+namespace LowPolyBacklogShared.DTOs.Igdb
 {
     public class IgdbGameResponseDto
     {

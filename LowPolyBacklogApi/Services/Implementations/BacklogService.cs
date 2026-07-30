@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using LowPolyBacklogApi.DTOs.Backlog;
+using LowPolyBacklogShared.DTOs.Backlog;
 using LowPolyBacklogApi.Entities;
 using LowPolyBacklogApi.Repositories.Interfaces;
 using LowPolyBacklogApi.Services.Interfaces;

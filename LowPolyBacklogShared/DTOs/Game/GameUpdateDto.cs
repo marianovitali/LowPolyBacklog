@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LowPolyBacklogApi.DTOs.Game
+namespace LowPolyBacklogShared.DTOs.Game
 {
     public class GameUpdateDto
     {

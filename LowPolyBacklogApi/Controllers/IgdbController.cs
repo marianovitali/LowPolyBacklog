@@ -1,4 +1,4 @@
-﻿using LowPolyBacklogApi.DTOs.Igdb;
+﻿using LowPolyBacklogShared.DTOs.Igdb;
 using LowPolyBacklogApi.Filters;
 using LowPolyBacklogApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;

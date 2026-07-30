@@ -1,7 +1,7 @@
-﻿using LowPolyBacklogApi.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using LowPolyBacklogShared.Enums;
 
-namespace LowPolyBacklogApi.DTOs.Backlog
+namespace LowPolyBacklogShared.DTOs.Backlog
 {
     public class BacklogCreateDto
     {

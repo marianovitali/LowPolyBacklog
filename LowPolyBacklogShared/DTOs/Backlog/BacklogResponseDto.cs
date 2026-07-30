@@ -1,6 +1,6 @@
-﻿using LowPolyBacklogApi.Entities;
+﻿using LowPolyBacklogShared.Enums;
 
-namespace LowPolyBacklogApi.DTOs.Backlog
+namespace LowPolyBacklogShared.DTOs.Backlog
 {
     public class BacklogResponseDto
     {
