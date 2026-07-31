@@ -1,131 +1,218 @@
-﻿# 🎮 Low Poly Backlog API
-RESTful API para gestionar y hacer seguimiento de un backlog personal de videojuegos retro, inspirada en la era PlayStation 1.
+# 🎮 Low Poly Backlog
+
+> A retro PlayStation-inspired web application to organize, track and manage your personal video game collection and backlog.
+
 <div align="center">
-  <img src="https://img.shields.io/badge/.NET_10-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET 10" />
-  <img src="https://img.shields.io/badge/C%23_14-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" />
-  <img src="https://img.shields.io/badge/Entity_Framework-0078D4?style=for-the-badge&logo=.net&logoColor=white" alt="Entity Framework Core" />
-  <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=Cloudinary&logoColor=white" alt="Cloudinary" />
-  <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=black" alt="Swagger" />
+
+![.NET](https://img.shields.io/badge/.NET%2010-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/C%23%2014-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core_MVC-5C2D91?style=for-the-badge)
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![Azure SQL](https://img.shields.io/badge/Azure_SQL-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+
 </div>
-<br/>
-
-##  Overview
-Low Poly Backlog permite catalogar juegos retro, organizarlos y trackear el progreso de cada uno (estado, horas jugadas, rating y notas personales).
-El proyecto está diseñado como una API backend escalable, aplicando buenas prácticas de arquitectura y desarrollo en .NET.
-
-##  Arquitectura y Diseño
-
-La aplicación sigue una arquitectura en capas, separando responsabilidades para mejorar mantenibilidad y testeo:
-
-```
-Controllers → Services → Repositories → DbContext → Database
-     ↓           ↓            ↓
-    DTOs    ← AutoMapper ←  Entities
-```
-
-**Decisiones clave:**
-- **Service Layer**: centraliza la lógica de negocio y evita lógica en controllers
-- **Repository Pattern**: desacopla el acceso a datos
-- **DTOs**: separan los contratos de la API del modelo de dominio
-- **AutoMapper**: simplifica el mapeo entre capas
-- **Entity Framework Core**: manejo de relaciones complejas (Many-to-Many y One-to-One)
-- **Paginación y filtrado dinámico**: endpoints preparados para escalar
-- **Consumo de APIs externas**: Usando HttpClientFactory
-
-##  Stack Tecnológico
-
-- .NET 10 / C# 14.0
-- ASP.NET Core Web API
-- Entity Framework Core (Code First)
-- SQL Server
-- Swagger / OpenAPI
-- Integración con APIs externas: Cloudinary SDK, IGDB API
-
-##  Funcionalidades
-
-###  Games
-- CRUD completo
-- Filtros por título, género y año con paginación configurable
-- Subida de carátulas de juegos integrando el servicio en la nube de Cloudinary
-- Búsqueda y autocompletado de videojuegos mediante integración con la API de IGDB
-
-###  Backlog
-- Estados: Pending, Playing, Completed, Abandoned
-- Rating (1–10) con validación
-- Registro de horas jugadas y notas personales
-
-###  Seguridad
-- Autenticación mediante esquema de API Key configurado e integrado directamente en la interfaz de Swagger.
-
-##  Ejemplo de uso
-
-**Request:**
-```
-GET /api/games?title=metal&pageNumber=1&pageSize=10
-```
-
-**Response (ejemplo):**
-```json
-{
-  "items": [
-    {
-      "id": 1,
-      "title": "Metal Gear Solid",
-      "year": 1998,
-      "genres": ["Stealth", "Action"],
-      "backlog": {
-        "status": "Completed",
-        "rating": 10,
-        "hoursPlayed": 15
-      }
-    }
-  ],
-  "currentPage": 1,
-  "totalPages": 3
-}
-```
-
-##  Instalación local
-
-Para clonar y ejecutar este proyecto localmente, necesitas configurar tus propias credenciales usando la herramienta de Secretos de Usuario de .NET.
-
-```bash
-git clone [https://github.com/marianovitali/lowpolybacklog.git](https://github.com/marianovitali/lowpolybacklog.git)
-cd lowpolybacklog
-
-# 1. Inicializar los secretos de usuario en el proyecto
-dotnet user-secrets init
-
-# 2. Configurar la API Key de seguridad local
-dotnet user-secrets set "ApiKey" "TU_API_KEY_PERSONAL"
-
-# 3. Configurar tus credenciales de Cloudinary
-dotnet user-secrets set "CloudinarySettings:ApiKey" "TU_CLOUDINARY_API_KEY"
-dotnet user-secrets set "CloudinarySettings:ApiSecret" "TU_CLOUDINARY_API_SECRET"
-
-# 4. Configurar credenciales de IGDB / Twitch
-
-dotnet user-secrets set "IGDB:ClientId" "TU_CLIENT_ID"
-dotnet user-secrets set "IGDB:ClientSecret" "TU_CLIENT_SECRET"
-
-# 5. Actualizar la base de datos local
-dotnet ef database update
-
-# 6. Ejecutar la API
-dotnet run
-```
-
-Swagger disponible en: `https://localhost:[port]/swagger`
-
-##  Próximas mejoras
-
-[ ] Manejo global de excepciones (Global Exception Handler).
-
-[ ] Logging estructurado.
-
-[ ] Caching para mejorar performance en consultas frecuentes.
 
 ---
 
-**👨‍💻 Autor:** Mariano Vitali | [GitHub](https://github.com/marianovitali)
+## 📸 Preview
+
+> *(Screenshots coming soon)*
+
+---
+
+## 🌐 Live Demo
+
+| Service | Link |
+|---------|------|
+|  [Web Application |](https://lowpolybacklog-web.onrender.com/)
+|  [Swagger | ](https://lowpolybacklog-api.onrender.com/swagger/index.html)
+
+---
+
+## Features
+
+### Frontend
+
+- Retro PlayStation-inspired interface
+- Dashboard with backlog statistics
+- Game library management
+- Backlog organization
+- Admin mode
+- Responsive layout
+
+### Backend
+
+- RESTful API
+- Repository Pattern
+- Service Layer
+- Entity Framework Core
+- SQL Server
+- Azure SQL Database
+- API Key Authentication
+- AutoMapper
+- Pagination & Filtering
+- Cloudinary image uploads
+- IGDB integration
+
+---
+
+## Architecture
+
+```
+Browser
+    │
+    ▼
+ASP.NET Core MVC
+    │
+HttpClientFactory
+    │
+    ▼
+ASP.NET Core Web API
+    │
+Service Layer
+    │
+Repository Layer
+    │
+Entity Framework Core
+    │
+Azure SQL Database
+```
+
+External services
+
+```
+IGDB API
+Cloudinary
+Render
+Azure SQL
+```
+
+---
+
+## Solution Structure
+
+```
+LowPolyBacklog/
+
+├── LowPolyBacklogApi/
+│
+├── LowPolyBacklogWeb/
+│
+├── LowPolyBacklogShared/
+│
+└── docker-compose.yml
+```
+
+---
+
+## Tech Stack
+
+### Backend
+
+- .NET 10
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
+- Azure SQL
+
+### Frontend
+
+- ASP.NET Core MVC
+- Razor Views
+- Bootstrap
+
+### Cloud
+
+- Azure SQL Database
+- Render
+- Cloudinary
+- IGDB API
+
+### DevOps
+
+- Docker
+- Docker Compose
+
+---
+
+## Running Locally
+
+Clone the repository
+
+```bash
+git clone https://github.com/marianovitali/LowPolyBacklog.git
+
+cd LowPolyBacklog
+```
+
+Configure your User Secrets
+
+```bash
+dotnet user-secrets init
+
+# Database
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "<your_connection_string>"
+
+# Cloudinary
+dotnet user-secrets set "CloudinarySettings:CloudName" "<cloud_name>"
+dotnet user-secrets set "CloudinarySettings:ApiKey" "<api_key>"
+dotnet user-secrets set "CloudinarySettings:ApiSecret" "<api_secret>"
+
+# IGDB
+dotnet user-secrets set "IgdbSettings:ClientId" "<client_id>"
+dotnet user-secrets set "IgdbSettings:ClientSecret" "<client_secret>"
+
+# Security
+dotnet user-secrets set "ApiKey" "<api_key>"
+```
+
+Run with Docker
+
+```bash
+docker compose up --build
+```
+
+or
+
+Run directly
+
+```bash
+dotnet ef database update
+
+dotnet run
+```
+
+---
+
+## Roadmap
+
+- ✅ ASP.NET Core Web API
+- ✅ ASP.NET MVC Frontend
+- ✅ Azure SQL Database
+- ✅ Docker Support
+- ✅ Cloudinary Integration
+- ✅ IGDB Integration
+- ✅ Render Deployment
+
+Planned
+
+- Authentication
+- User Accounts
+- Game Collections
+- Statistics
+- GitHub Actions CI/CD
+- Automated Testing
+
+---
+
+## 👨‍💻 Author
+
+**Mariano Vitali**
+
+Backend Developer (.NET)
+
+GitHub:
+https://github.com/marianovitali
