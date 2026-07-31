@@ -17,18 +17,12 @@
 
 ---
 
-## 📸 Preview
-
-> *(Screenshots coming soon)*
-
----
-
 ## 🌐 Live Demo
 
 | Service | Link |
 |---------|------|
-|  [Web Application |](https://lowpolybacklog-web.onrender.com/)
-|  [Swagger | ](https://lowpolybacklog-api.onrender.com/swagger/index.html)
+|  [Web Application]|(https://lowpolybacklog-web.onrender.com/)
+|  [Swagger]| (https://lowpolybacklog-api.onrender.com/swagger/index.html)
 
 ---
 
