@@ -101,7 +101,7 @@ else
 
 app.UseHttpsRedirection();
 
-
+app.MapGet("/health", () => Results.Ok("healthy"));
 app.UseCors();
 app.MapControllers();
 
