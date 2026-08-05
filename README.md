@@ -18,11 +18,10 @@
 ---
 
 ## 🌐 Live Demo
-**Please open the API link first to wake it up (~50s delay).**
 | Service | Link |
 |---------|------|
 |  [Web Application]|(https://lowpolybacklog-web.onrender.com/)
-|  [Swagger]| (https://lowpolybacklog-api.onrender.com/swagger/index.html)
+|  [API Documentation]| (https://lowpolybacklog-api.onrender.com/swagger/index.html)
 
 ---
 
